@@ -30,10 +30,5 @@ $active = basename($_SERVER['PHP_SELF'], ".php");
 <a class="<?= ($active == 'kuvagalleria') ? 'active':''; ?>" href="kuvagalleria.php">Kuvagalleria</a>
 <a class="<?= ($active == 'profiili') ? 'active':''; ?>" href="profiili.php">Profiili</a>
 <a class="<?= ($active == 'rekisteroitymislomake') ? 'active':''; ?>" href="rekisteroitymislomake.php">Rekisteröityminen</a>
-<a class="<?= ($active == 'verkkosivu') ? 'active':''; ?>" href="verkkosivu.php">Verkkosivu</a>
-<a class="<?= ($active == 'vieritys') ? 'active':''; ?>" href="vieritys.php">Vieritys</a>
-<a class="<?= ($active == 'PHP-tehtavia') ? 'active':''; ?>" href="PHP-tehtavia.php">PHP-tehtavat</a>
-<a class="<?= ($active == 'autot') ? 'active':''; ?>" href="autot.php">Autot</a>
-<a class="<?= ($active == 'sakila') ? 'active':''; ?>" href="sakila.php">Sakila</a>
 <a class="<?= ($active == 'phpinfo') ? 'active':''; ?>" href="phpinfo.php">phpinfo</a>
 </nav>

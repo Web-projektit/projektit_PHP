@@ -57,6 +57,7 @@ document.querySelector("input").onchange = () => {
 
 
 /*  Jatkuva vieritys */
+/*
 window.onscroll = () => {
   console.log(window.innerHeight + window.scrollY)
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight-1) {
@@ -68,10 +69,10 @@ window.onscroll = () => {
 let url = "./posts.php";
 let counter = 1;
 const quantity = 25;
-/* Ensimmäinen erä postauksia */
+// Ensimmäinen erä postauksia
 document.addEventListener('DOMContentLoaded', load);
 
-/* Lisää postauksia */
+// Lisää postauksia
 function load() {
     const start = counter;
     const end = start + quantity - 1;
@@ -88,5 +89,5 @@ const add_post = contents => {
     const post = document.createElement('div');
     post.innerHTML = contents;
     document.querySelector('#posts').append(post);
-};
+};*/
 

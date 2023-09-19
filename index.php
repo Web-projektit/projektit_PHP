@@ -1,3 +1,3 @@
 <?php
-header('Location: ./PHP-tehtavia.php');
+header('Location: ./rekisteroitymislomake.php');
 ?>

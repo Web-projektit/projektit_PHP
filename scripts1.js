@@ -1,5 +1,4 @@
 /* Esimerkki virheilmoituksen näyttämisestä */
-console.log("virheilmoitukset:",virheilmoitukset);
 const menutoggle = () => {
 try {
     console.log("menutoggle");
@@ -46,28 +45,39 @@ document.querySelector("input").onchange = () => {
   const forms = document.querySelectorAll(".needs-validation");
   // Loop over them and prevent submission
   Array.from(forms).forEach(form => {
-    const formElements = Array.from(form.elements).filter(element => {
-      return element.tagName !== 'BUTTON' && element.tagName !== 'LABEL';
-      });
     form.addEventListener("submit", event => {
-      if (!form.checkValidity()) {
-            formElements.forEach(input => {
+
+      
+
+        if (!form.checkValidity()) {
+            Array.from(form.elements).forEach(input => {
                 const feedback = input.nextElementSibling;
+    
                 if (!input.validity.valid) {
-                  for (let errorType in input.validity) {
-                    if (input.validity[errorType]) {
-                      console.log(`Virhe ${input.name}, ${errorType}: ${input.validationMessage}`);
-                      if (virheilmoitukset[input.name] && virheilmoitukset[input.name][errorType]) {
-                        feedback.textContent = virheilmoitukset[input.name][errorType];
-                        }
-                      else feedback.textContent = input.validationMessage;
-                      }
-                    }
-                  }
-              });
+                    // Selaimen asettama oletusviesti
+                    feedback.textContent = input.validationMessage;
+                }
+            });
+    
+
           event.preventDefault();
           event.stopPropagation();
-         }
+  
+          Object.keys(errorMessages).forEach(key => {
+            const input = form[key];
+            const feedback = input.nextElementSibling;
+            feedback.textContent = '';
+            // Käy läpi kaikki virhetyypit ja aseta sopiva virheilmoitus
+            for (const [errorType, message] of Object.entries(errorMessages[key])) {
+                if (input.validity[errorType]) {
+                    feedback.textContent = message;
+                    break;
+                }
+              }
+            });
+        
+
+          }
         form.classList.add("was-validated");
         },false);
     });

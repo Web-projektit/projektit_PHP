@@ -9,7 +9,7 @@ else {
 $palvelin = $db_server_local;
 $kayttaja = $db_username_local;  // tämä on tietokannan käyttäjä, ei tekemäsi järjestelmän
 $salasana = $db_password_local;
-$tietokanta ?? "autokanta";
+$tietokanta ??= "neilikka";
 $yhteys = new mysqli($palvelin, $kayttaja, $salasana, $tietokanta);
 if ($yhteys->connect_error) {
    die("Yhteyden muodostaminen epäonnistui: " . $yhteys->connect_error);

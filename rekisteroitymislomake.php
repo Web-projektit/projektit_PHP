@@ -1,8 +1,12 @@
 <?php 
+$tietokanta = "neilikka";
 $title = 'Rekisteröityminen';
 //$css = 'rekisteroityminen.css';
-include "header.php";
 include "virheilmoitukset.php";
+$virheilmoitukset_json = json_encode($virheilmoitukset);
+echo "<script>const virheilmoitukset = $virheilmoitukset_json</script>";
+include "db.php";
+include "header.php";
 include "rekisterointi.php";
 
 ?>
@@ -18,7 +22,7 @@ include "rekisterointi.php";
        placeholder="Etunimi" value="<?= arvo("firstname"); ?>" 
        required> 
 <div class="invalid-feedback">
-<?= error('firstname') ?? ""; ?>    
+<?= $errors['firstname'] ?? ""; ?>    
 </div>
 </div>    
 </div>
@@ -26,11 +30,10 @@ include "rekisterointi.php";
 <div class="row">
 <label for="lastname" class="col-sm-4 form-label">Sukunimi</label>
 <div class="col-sm-8">
-<input type="text" class="mb-1 form-control" name="lastname" id="lastname" 
+<input type="text" class="mb-1 form-control <?= is_invalid('lastname'); ?>" name="lastname" id="lastname" 
        placeholder="Sukunimi" value="<?= arvo("lastname"); ?>" required>
 <div class="invalid-feedback">
-<?php if (isset($errors['lastname'])) echo $errors['lastname']; 
-        else echo $virhetekstit['lastname']['puuttuu'];?>    
+<?= $errors['lastname'] ?? ""; ?>    
 </div>
 </div>
 </div>
@@ -38,11 +41,11 @@ include "rekisterointi.php";
 <div class="row">
 <label for="email" class="col-sm-4 form-label">Sähköpostiosoite</label>
 <div class="col-sm-8">
-<input type="email" class="mb-1 form-control" name="email" id="email" 
-       placeholder="etunimi.sukunimi@palvelu.fi" pattern="<?= pattern('email'); ?>" value="<?= arvo("email"); ?>" required>
+<input type="email" class="mb-1 form-control <?= is_invalid('email'); ?>" name="email" id="email" 
+       placeholder="etunimi.sukunimi@palvelu.fi" value="<?= arvo("email"); ?>"
+       pattern="<?= pattern('email'); ?>" required>
 <div class="invalid-feedback">
-<?php if (isset($errors['email'])) echo $errors['email']; 
-        else echo $virhetekstit['email']['oikein'];?>    
+<?= $errors['email'] ?? ""; ?>    
 </div>
 </div>
 </div>
@@ -50,11 +53,10 @@ include "rekisterointi.php";
 <div class="row">
 <label for="password" class="col-sm-4 form-label">Salasana</label>
 <div class="col-sm-8">
-<input type="password" class="mb-1 form-control" name="password" id="password" 
-       placeholder="etunimi.sukunimi@palvelu.fi" pattern="" required>
+<input type="password" class="mb-1 form-control <?= is_invalid('password'); ?>" name="password" id="password" 
+       placeholder="salasana" pattern="<?= pattern('password'); ?>" required>
 <div class="invalid-feedback">
-<?php if (isset($errors['password'])) echo $errors['password']; 
-        else echo $virhetekstit['password']['puuttuu'];?>    
+<?= $errors['password'] ?? ""; ?>    
 </div>
 </div>
 </div>
@@ -62,15 +64,14 @@ include "rekisterointi.php";
 <div class="row">
 <label for="password2" class="text-nowrap col-sm-4 form-label">Salasana uudestaan</label>
 <div class="col-sm-8">
-<input type="password" class="mb-1 form-control" name="password2" id="email" 
-       placeholder="etunimi.sukunimi@palvelu.fi" pattern="" required>
+<input type="password" class="mb-1 form-control <?= is_invalid('password2'); ?>" name="password2" id="password2" 
+       placeholder="salasana uudestaan" pattern="<?= pattern('password2'); ?>" required>
 <div class="invalid-feedback">
-<?php if (isset($errors['password2'])) echo $errors['password2']; 
-        else echo $virhetekstit['password2']['puuttuu'];?>    
+<?= $errors['password2'] ?? ""; ?>    
 </div>
 </div>
 </div>
-<button type="submit" class="mt-2 float-end btn btn-primary">Rekisteröidy</button>
+<button name='button' type="submit" class="mt-2 float-end btn btn-primary">Rekisteröidy</button>
 </fieldset>
 
 </form>

@@ -3,16 +3,6 @@ $display = "d-none";
 $message = "";
 $errors = [];
 
-$patterns['password'] = "/^.{12,}$/";
-$patterns['password2'] = $patterns['password'];
-/* Huom. Myös heittomerkki ja tavuviiva */
-$patterns['firstname'] = "/^[a-zåäöA-ZÅÄÖ'\-]+$/";
-$patterns['lastname'] = $patterns['firstname']; 
-$patterns['name'] = "/^[a-zåäöA-ZÅÄÖ '\-]+$/";
-$patterns['mobilenumber'] = "/^[0-9]{7,15}$/";
-$patterns['email'] = "/^[\w]+[\w.+\-]*@[\w\-]+(\.[\w\-]{2,})?\.[a-zA-Z]{2,}$/";
-$patterns['image'] = "/^[^\s]+\.(jpe?g|png|gif|bmp)$/"; 
-$patterns['rememberme'] = "/^checked$/";
 
 function pattern($kentta) {
     return trim($GLOBALS['patterns'][$kentta],"/");
@@ -30,26 +20,73 @@ function is_invalid($kentta) {
     return (isset($GLOBALS['errors'][$kentta])) ? "is-invalid" : "";
     }       
 
+if (isset($_POST['button'])) {
 
-if (isset($_POST['firstname'])) {
-    $firstname = $_POST['firstname'];
-    if (!empty($firstname) and !preg_match($patterns['firstname'], $firstname)) {
-        $errors['firstname'] = "Nimi ei kelpaa";
+foreach ($_POST as $kentta => $arvo) {
+    $$kentta = $yhteys->real_escape_string(strip_tags(trim($arvo)));
+    if (in_array($kentta, $pakolliset) and empty($arvo)) {
+        $errors[$kentta] = $virheilmoitukset[$kentta]['valueMissing'];
+        }
+    else {
+        if (isset($patterns[$kentta]) and !preg_match($patterns[$kentta], $arvo)) {
+            $errors[$kentta] = $virheilmoitukset[$kentta]['patternMismatch'];
+            }
+        }
     }
-}    
+
+if (empty($errors['password2']) and empty($errors['password'])) {
+    if ($_POST['password'] != $_POST['password2']) {
+        $errors['password2'] = $virheilmoitukset['password2']['customError'];
+        }
+    }
+    
+$query = "SELECT 1 FROM users WHERE email = '$email'";
+$result = $yhteys->query($query);
+if ($result->num_rows > 0) {
+    $errors['email'] = $virheilmoitukset['email']['emailExistsError'];
+    }
+
+$query = "SELECT 1 FROM users WHERE firstname = '$firstname' AND lastname = '$lastname'";
+$result = $yhteys->query($query);
+if ($result->num_rows > 0) {
+    $errors['firstname'] = $virheilmoitukset['firstname']['nameExistsError'];
+    $errors['lastname'] = $virheilmoitukset['lastname']['nameExistsError'];
+    }    
+
+if (empty($errors)) {
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    $query = "INSERT INTO users (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$password')";
+    $result = $yhteys->query($query);
+    if ($result) {
+        $message = "Tallennettu!";
+        $display = "d-block";
+        }
+    else {
+        $message = "Tallennus epäonnistui!";
+        $display = "d-block";
+        }
+    }
+    if ($result) {
+         $id = $yhteys->insert_id;
+         $token = md5(rand().time());
+         $query = "INSERT INTO signup_tokens (users_id,token) VALUES ($id,'$token')";
+         debuggeri($query);
+         $result = $yhteys->query($query);
+         $lisattiin_token = $yhteys->affected_rows;
+         }
+
+    if ($result) {
+         $msg = "Vahvista sähköpostiosoitteesi:<br><br>";
+         $msg.= "<a href='http://$PALVELIN/$PALVELU/verification.php?token=$token'>Vahvista sähköpostiosoite</a>";
+         $subject = "Vahvista sähköpostiosoite";
+         $lahetetty = posti($email,$msg,$subject);
+         }   
+  
 
 var_export($_POST);
+echo "<br>";
 var_export($errors);
-/*
-if (isset($_POST['firstname'])) {
-    $firstname = $_POST['firstname'];
-    if (empty($firstname)) {
-        $errors['firstname'] = "Nimi puuttuu";
-    }
-}   
-$password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);        
-*/
-
+}
 /*
 $display = "d-block";
 $message = "Tallennettu!";

@@ -1,6 +1,8 @@
 <?php
 $display = "d-none";
 $message = "";
+$success = "success";
+$lisays = $lisattiin_token = $lahetetty = false;
 $errors = [];
 
 
@@ -49,46 +51,53 @@ if ($result->num_rows > 0) {
 $query = "SELECT 1 FROM users WHERE firstname = '$firstname' AND lastname = '$lastname'";
 $result = $yhteys->query($query);
 if ($result->num_rows > 0) {
+    debuggeri($query);
     $errors['firstname'] = $virheilmoitukset['firstname']['nameExistsError'];
     $errors['lastname'] = $virheilmoitukset['lastname']['nameExistsError'];
     }    
 
+debuggeri($errors);    
 if (empty($errors)) {
     $password = password_hash($password, PASSWORD_DEFAULT);
     $query = "INSERT INTO users (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$password')";
     $result = $yhteys->query($query);
-    if ($result) {
-        $message = "Tallennettu!";
-        $display = "d-block";
-        }
-    else {
-        $message = "Tallennus epäonnistui!";
-        $display = "d-block";
-        }
+    $lisays = $yhteys->affected_rows;
     }
-    if ($result) {
-         $id = $yhteys->insert_id;
-         $token = md5(rand().time());
-         $query = "INSERT INTO signup_tokens (users_id,token) VALUES ($id,'$token')";
-         debuggeri($query);
-         $result = $yhteys->query($query);
-         $lisattiin_token = $yhteys->affected_rows;
-         }
 
-    if ($result) {
-         $msg = "Vahvista sähköpostiosoitteesi:<br><br>";
-         $msg.= "<a href='http://$PALVELIN/$PALVELU/verification.php?token=$token'>Vahvista sähköpostiosoite</a>";
-         $subject = "Vahvista sähköpostiosoite";
-         $lahetetty = posti($email,$msg,$subject);
-         }   
-  
+if ($lisays) {
+    $id = $yhteys->insert_id;
+    $token = md5(rand().time());
+    $query = "INSERT INTO signup_tokens (users_id,token) VALUES ($id,'$token')";
+    debuggeri($query);
+    $result = $yhteys->query($query);
+    $lisattiin_token = $yhteys->affected_rows;
+    }
 
-var_export($_POST);
-echo "<br>";
-var_export($errors);
-}
-/*
+if ($lisattiin_token) {
+    $msg = "Vahvista sähköpostiosoitteesi alla olevasta linkistä:<br><br>";
+    $msg.= "<a href='http://$PALVELIN/$PALVELU/verification.php?token=$token'>Vahvista sähköpostiosoite</a>";
+    $msg.= "<br><br>t. t. $PALVELUOSOITE";
+    $subject = "Vahvista sähköpostiosoite";
+    $lahetetty = posti($email,$msg,$subject);
+    }   
+
+if ($lahetetty){
+    $message = "Tiedot on allennettu. Sinulle on lähetty antamaasi sähköpostiosoitteeseen
+                vahvistuspyyntö. Vahvista siinä olevasta linkistä sähköpostiosoitteesi.";
+
+    }
+elseif ($lisays) {
+    $message = "Tallennus onnistui!";
+    }
+else {
+    $message = "Tallennus epäonnistui!";
+    $success = "danger";
+    }
 $display = "d-block";
-$message = "Tallennettu!";
-*/
+
+/*var_export($_POST);
+echo "<br>";
+var_export($errors);*/
+}
+
 ?>

@@ -17,6 +17,7 @@
 <?php 
 ini_set('default_charset', 'utf-8');
 error_reporting(E_ALL);
+require "asetukset.php";
 include "debuggeri.php";
 register_shutdown_function('debuggeri_shutdown');
 $active = basename($_SERVER['PHP_SELF'], ".php");

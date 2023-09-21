@@ -1,0 +1,61 @@
+2023-09-21 10:57:14 INSERT INTO signup_tokens (users_id,token) VALUES (0,'ebff4f45a47fa6bfe9a5bd21ad409efd')
+2023-09-21 10:59:28 INSERT INTO signup_tokens (users_id,token) VALUES (0,'d3e4978ffff6330ca78e5efe2f63837d')
+2023-09-21 11:12:58 INSERT INTO signup_tokens (users_id,token) VALUES (0,'102bb451825729650a48db393e5a9baa')
+2023-09-21 11:14:20 INSERT INTO signup_tokens (users_id,token) VALUES (0,'03557bdf9b50748554dfb6dd1173b64e')
+2023-09-21 11:18:49 array (
+  'password' => 'Salasanan pitää olla vähintään 12 merkkiä pitkä',
+  'password2' => 'Virheellinen salasana',
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-21 11:21:04 array (
+  'password' => 'Salasanan pitää olla vähintään 12 merkkiä pitkä',
+  'password2' => 'Virheellinen salasana',
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-21 11:25:05 array (
+  'password' => 'Salasanan pitää olla vähintään 12 merkkiä pitkä',
+  'password2' => 'Virheellinen salasana',
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-21 11:25:52 array (
+  'password' => 'Salasanan pitää olla vähintään 12 merkkiä pitkä',
+  'password2' => 'Virheellinen salasana',
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-21 11:26:51 array (
+  'password' => 'Salasanan pitää olla vähintään 12 merkkiä pitkä',
+  'password2' => 'Virheellinen salasana',
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-21 11:27:42 array (
+  'password' => 'Salasanan pitää olla vähintään 12 merkkiä pitkä',
+  'password2' => 'Virheellinen salasana',
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-21 11:30:54 SELECT 1 FROM users WHERE firstname = 'Jukka' AND lastname = 'Aula'
+2023-09-21 11:30:54 array (
+  'password' => 'Salasanan pitää olla vähintään 12 merkkiä pitkä',
+  'password2' => 'Virheellinen salasana',
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-21 11:34:18 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+)
+2023-09-21 11:34:58 array (
+)
+2023-09-21 11:34:58 INSERT INTO signup_tokens (users_id,token) VALUES (25,'8d20371cbc07213e439f8aa0bf05eb7a')
+2023-09-21 11:35:01 Viesti lähetetty: jukka.aula@kolumbus.fi!

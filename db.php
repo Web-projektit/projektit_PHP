@@ -1,16 +1,5 @@
 <?php
-$tunnukset = "../../../tunnukset.php";
-if (file_exists($tunnukset)){
-    include_once("../../../tunnukset.php");
-    } 
-else {
-    die("Tiedostoa ei löydy, ota yhteys ylläpitoon.");
-    }    
-$palvelin = $db_server_local;
-$kayttaja = $db_username_local;  // tämä on tietokannan käyttäjä, ei tekemäsi järjestelmän
-$salasana = $db_password_local;
-$tietokanta ??= "neilikka";
-$yhteys = new mysqli($palvelin, $kayttaja, $salasana, $tietokanta);
+$yhteys = new mysqli($db_server, $db_username, $db_password, $DB);
 if ($yhteys->connect_error) {
    die("Yhteyden muodostaminen epäonnistui: " . $yhteys->connect_error);
    }

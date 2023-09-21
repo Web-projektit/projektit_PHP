@@ -5,10 +5,10 @@ $title = 'Rekisteröityminen';
 include "virheilmoitukset.php";
 $virheilmoitukset_json = json_encode($virheilmoitukset);
 echo "<script>const virheilmoitukset = $virheilmoitukset_json</script>";
-include "db.php";
 include "header.php";
+include "db.php";
+include "posti.php";
 include "rekisterointi.php";
-
 ?>
 <div class="container"> 
 <form method="post" class="mb-3 needs-validation" novalidate>
@@ -76,7 +76,7 @@ include "rekisterointi.php";
 
 </form>
 
-<div  id="ilmoitukset" class="alert alert-success alert-dismissible fade show <?= $display ?? ""; ?>" role="alert">
+<div  id="ilmoitukset" class="alert alert-<?= $success ;?> alert-dismissible fade show <?= $display ?? ""; ?>" role="alert">
 <p><?= $message; ?></p>
 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>

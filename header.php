@@ -15,12 +15,18 @@
 </head>
 <body>
 <?php 
+if (!session_id()) session_start();
 ini_set('default_charset', 'utf-8');
 error_reporting(E_ALL);
 require "asetukset.php";
 include "debuggeri.php";
 register_shutdown_function('debuggeri_shutdown');
 $active = basename($_SERVER['PHP_SELF'], ".php");
+$loggedIn = loggedIn();
+
+function active($sivu,$active){
+    return $active == $sivu ? 'active' : '';  
+    }
 ?>
 <nav>
 <a class="brand-logo" href="index.php">
@@ -29,7 +35,15 @@ $active = basename($_SERVER['PHP_SELF'], ".php");
 <label for="toggle-btn" class="icon open"><i class="fa fa-bars"></i></label>
 <label for="toggle-btn" class="icon close"><i class="fa fa-times"></i></label>
 <a class="<?= ($active == 'kuvagalleria') ? 'active':''; ?>" href="kuvagalleria.php">Kuvagalleria</a>
-<a class="<?= ($active == 'profiili') ? 'active':''; ?>" href="profiili.php">Profiili</a>
-<a class="<?= ($active == 'rekisteroitymislomake') ? 'active':''; ?>" href="rekisteroitymislomake.php">Rekisteröityminen</a>
 <a class="<?= ($active == 'phpinfo') ? 'active':''; ?>" href="phpinfo.php">phpinfo</a>
+<?php
+  if ($loggedIn) {
+    echo "<a class='".active('profiili',$active). "' href='profiili.php'>Profiili</a>";
+    echo '<a class="nav-suojaus" href="poistu.php">Poistu</a>';
+    }
+  else {
+    echo "<a class='nav-suojaus ".active('login',$active)."' href='login.php'>Kirjautuminen</a>";
+    }
+  ?>
+
 </nav>

@@ -1,4 +1,6 @@
 <?php 
+include('rememberme.php');
+$loggedIn = secure_page();
 $title = 'Profiili';
 $css = 'profiili.css';
 include "header.php"; 

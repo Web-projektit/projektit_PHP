@@ -1,7 +1,7 @@
 <?php
-$kentat = ['firstname','lastname','email','mobilenumber','password','password2'];
-$kentat_suomi = ['etunimi','sukunimi','sähköpostiosoite','matkapuhelinnumero','salasana','salasana'];
-$pakolliset = ['firstname','lastname','email','password','password2'];
+$kentat ??= ['firstname','lastname','email','mobilenumber','password','password2'];
+$kentat_suomi ??= ['etunimi','sukunimi','sähköpostiosoite','matkapuhelinnumero','salasana','salasana'];
+$pakolliset ??= ['firstname','lastname','email','password','password2'];
 $kaannokset = array_combine($kentat,$kentat_suomi);
 //$kaannokset = ['firstname' => 'etunimi', 'lastname' => 'sukunimi', 'email' => 'sähköpostiosoite', 'mobilenumber' => 'matkapuhelinnumero', 'password' => 'salasana', 'password2' => 'salasana uudestaan'];
 //$kaannokset = $kentat_suomi[array_search('lastname',$kentat)]

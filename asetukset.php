@@ -4,6 +4,7 @@ $PALVELU = "projektit_PHP/php_sovellusmalli";
 $LINKKI_RESETPASSWORD = "resetpassword.php";
 $LINKKI_VERIFICATION = "verification.php";
 $PALVELUOSOITE = "asiakaspalvelu@neilikka.fi";
+define("OLETUSSIVU","profiili.php");
 $DB = "neilikka";
 $LOCAL = in_array($_SERVER['REMOTE_ADDR'],array('127.0.0.1','REMOTE_ADDR' => '::1'));
 if ($LOCAL) {	

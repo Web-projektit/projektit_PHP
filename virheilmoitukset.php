@@ -1,4 +1,5 @@
 <?php
+$errors = $errors ?? [];
 $kentat ??= ['firstname','lastname','email','mobilenumber','password','password2'];
 $kentat_suomi ??= ['etunimi','sukunimi','sähköpostiosoite','matkapuhelinnumero','salasana','salasana'];
 $pakolliset ??= ['firstname','lastname','email','password','password2'];
@@ -39,6 +40,23 @@ function validationMessages($kentat){
     return $validationMessage;
     }
     
+    function pattern($kentta) {
+        return trim($GLOBALS['patterns'][$kentta],"/");
+        }
+        
+    function error($kentta) {
+        return $GLOBALS['errors'][$kentta] ?? $GLOBALS['virhetekstit'][$kentta]['puuttuu'];
+        }
+    
+    function arvo($kentta) {
+        return $_POST[$kentta] ?? "";
+        }   
+        
+    function is_invalid($kentta) {        
+        return (isset($GLOBALS['errors'][$kentta])) ? "is-invalid" : "";
+        }       
+    
+
 $virheilmoitukset = validationMessages($kentat);
 $virheilmoitukset['password']['patternMismatch'] = "Salasanan pitää olla vähintään 12 merkkiä pitkä";    
 $virheilmoitukset['password2']['valueMissing'] = "Anna salasana uudestaan"; 
@@ -46,4 +64,7 @@ $virheilmoitukset['password2']['customError'] = "Salasanat eivät täsmää";
 $virheilmoitukset['email']['emailExistsError'] = "Sähköpostiosoite on jo käytössä";     
 $virheilmoitukset['firstname']['nameExistsError'] = "Nimi on jo käytössä";  
 $virheilmoitukset['lastname']['nameExistsError'] = "Nimi on jo käytössä";  
+$virheilmoitukset['accountNotExistErr'] = "Tuntematon sähköpostiosoite";   
+$virheilmoitukset['verificationRequiredErr'] = "Vahvista sähköpostiosoite ensin";
+$virheilmoitukset['emailPwdErr'] = "Väärä käyttäjätunnus tai salasana";
 ?>

@@ -20,6 +20,7 @@ ini_set('default_charset', 'utf-8');
 error_reporting(E_ALL);
 require "asetukset.php";
 include "debuggeri.php";
+include "rememberme.php";
 register_shutdown_function('debuggeri_shutdown');
 $active = basename($_SERVER['PHP_SELF'], ".php");
 $loggedIn = loggedIn();
@@ -39,10 +40,14 @@ function active($sivu,$active){
 <?php
   if ($loggedIn) {
     echo "<a class='".active('profiili',$active). "' href='profiili.php'>Profiili</a>";
+    //echo "<div class='nav-suojaus'>";
     echo '<a class="nav-suojaus" href="poistu.php">Poistu</a>';
+    //echo "</div>";
     }
   else {
+    //echo "<div class='nav-suojaus'>";
     echo "<a class='nav-suojaus ".active('login',$active)."' href='login.php'>Kirjautuminen</a>";
+    //echo "</div>";
     }
   ?>
 

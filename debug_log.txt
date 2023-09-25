@@ -59,3 +59,19 @@
 )
 2023-09-21 11:34:58 INSERT INTO signup_tokens (users_id,token) VALUES (25,'8d20371cbc07213e439f8aa0bf05eb7a')
 2023-09-21 11:35:01 Viesti lähetetty: jukka.aula@kolumbus.fi!
+2023-09-25 12:51:26 
+2023-09-25 13:06:14 
+2023-09-25 13:08:24 
+2023-09-25 13:08:57 array (
+)
+2023-09-25 13:09:48 array (
+)
+2023-09-25 13:10:37 array (
+)
+2023-09-25 13:33:40 ,session ja cookie
+2023-09-25 13:33:40 array (
+  'loggedIn' => true,
+)
+2023-09-25 13:33:40 array (
+  'PHPSESSID' => '41h39u23rc22hutbc84149o0eu',
+)

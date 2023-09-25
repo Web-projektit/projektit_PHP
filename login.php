@@ -1,6 +1,6 @@
 <?php 
 $title = 'Kirjautuminen';
-//$css = 'kuvagalleria.css';
+$css = 'login.css';
 
 /* Lomakkeen kentät, nimet samat kuin users-taulussa. */
 $kentat = ['email','password','rememberme'];
@@ -43,20 +43,25 @@ include('kasittelija_login.php');
 </div>
 </div>
 
-<!--
+
 <div class="row offset-sm-4">
 <div class="form-check ms-2">
 <input class="form-check-input" type="checkbox" value="checked" <?= nayta_rememberme('rememberme'); ?> id="rememberme" name="rememberme"/>
 <label class="form-check-label" for="rememberme">Muista minut</label>
+<div class="invalid-feedback">
+<?= $errors['rememberme'] ?? ""; ?>    
 </div>
 </div>
--->
+</div>
+
+
+<div class="div-button">
+<input type="submit" name="painike" class="offset-sm-4 mt-2 mb-2 btn btn-primary" value="Kirjaudu">  
+</div>
 
 <div class="row offset-sm-4">
 <a href="forgotpassword.php">Unohtuiko salasana</a>
 </div>
-
-<input type="submit" name="painike" class="btn btn-primary mt-3" value="Kirjaudu">  
 
 <div class="row offset-sm-4">
 <!--<p class="mt-2 pt-1 mb-0">Käyttäjätunnus puuttuu?-->
@@ -67,19 +72,15 @@ include('kasittelija_login.php');
 </form>
 
 <?php
-if (isset($_POST['painike']) && $errors){
+/*if (isset($_POST['painike']) && $errors){
     echo '<div class="ilmoitukset mt-3">';
     foreach ($errors as $kentta => $arvo) {
       echo "<div class=\"alert alert-danger\" role=\"alert\">$arvo</div>";   
       }
     echo "</div>";
-    }
+    }*/
 ?>
 </div>
 <?php
 include('footer.html');
 ?>
-</html>
-
-</div>
-<?php include "footer.html"; ?>

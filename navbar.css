@@ -51,6 +51,16 @@ nav .close {
   display: none;
 }
 
+/*nav .nav-suojaus {
+  display: flex;
+  flex:1 0 auto;
+  justify-content: flex-end;
+}*/
+
+nav .nav-suojaus {
+ margin-left:auto;
+}
+
 #toggle-btn {
   position: absolute;
   visibility: hidden;

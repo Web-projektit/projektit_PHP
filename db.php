@@ -5,4 +5,7 @@ if ($yhteys->connect_error) {
    }
 $yhteys->set_charset("utf8");
 
+function db_connect(){
+return $GLOBALS['yhteys'];   
+}
 ?>

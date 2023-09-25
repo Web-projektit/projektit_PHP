@@ -29,7 +29,8 @@ return $result;
 
 
 function find_rememberme_token(string $selector){
-$yhteys = db_connect();    
+$id = $hashed_validator = $user_id = $expiry = null;    
+$yhteys = db_connect();   
 $query = "SELECT id, selector, hashed_validator, user_id, expiry FROM rememberme_tokens
           WHERE selector = ? AND expiry >= now() LIMIT 1";
 $stmt = $yhteys->prepare($query);
@@ -54,6 +55,7 @@ return $result;
 function find_user_by_token(string $token){    
 $tokens = parse_token($token);
 if (!$tokens) return null;
+$users_id = $email = null;
 $yhteys = db_connect();
 $query = "SELECT users.id, email FROM users INNER JOIN rememberme_tokens ON user_id = users.id
           WHERE selector = ? AND expiry > now() LIMIT 1";

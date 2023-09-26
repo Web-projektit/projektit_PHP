@@ -75,3 +75,246 @@
 2023-09-25 13:33:40 array (
   'PHPSESSID' => '41h39u23rc22hutbc84149o0eu',
 )
+2023-09-25 13:39:41 array (
+)
+2023-09-25 14:04:36 ,session ja cookie
+2023-09-25 14:04:36 array (
+  'loggedIn' => true,
+)
+2023-09-25 14:04:36 array (
+  'PHPSESSID' => '7oojlvq1071dr0od80t24egult',
+)
+2023-09-25 14:09:57 array (
+)
+2023-09-25 14:34:35 ,session ja cookie
+2023-09-25 14:34:35 array (
+  'loggedIn' => true,
+)
+2023-09-25 14:34:35 array (
+  'PHPSESSID' => '7u74pdh7vhhck1njbbcb9jupo1',
+)
+2023-09-25 14:36:37 array (
+)
+2023-09-25 14:36:50 ,session ja cookie
+2023-09-25 14:36:50 array (
+  'loggedIn' => true,
+)
+2023-09-25 14:36:50 array (
+  'PHPSESSID' => '84tmgs0fecroj273prr0c5vbon',
+)
+2023-09-25 14:37:04 array (
+)
+2023-09-25 14:37:09 ,session ja cookie
+2023-09-25 14:37:09 array (
+  'loggedIn' => true,
+)
+2023-09-25 14:37:09 array (
+  'PHPSESSID' => 'mq0j99aqdv6emvnbi4l7d250ea',
+)
+2023-09-25 14:37:20 array (
+)
+2023-09-25 14:37:20 Poistettiin: 0 rememberme_token.
+2023-09-25 14:37:20 Lisättiin: 1 rememberme_token.
+2023-09-25 14:39:33 ,session ja cookie
+2023-09-25 14:39:33 array (
+  'loggedIn' => true,
+)
+2023-09-25 14:39:33 array (
+  'rememberme' => 'b268b008e45b3f7b6a87bd801527d768:90d9fb8fcf70fd4d841ce7ae702c9e416b4d464a203a37002569d100a67ab005',
+  'PHPSESSID' => 'sgnn7rk5aaj0vm30hr38ghh41t',
+)
+2023-09-25 14:40:21 SELECT 1 FROM users WHERE firstname = 'Jukka' AND lastname = 'Aula'
+2023-09-25 14:40:21 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 14:55:35 SELECT 1 FROM users WHERE firstname = 'Jukka' AND lastname = 'Aula'
+2023-09-25 14:55:35 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 14:55:48 SELECT 1 FROM users WHERE firstname = 'Jukka' AND lastname = 'Aula'
+2023-09-25 14:55:48 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 14:56:41 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 14:56:41 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:25:11 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:25:11 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:25:30 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:25:30 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:25:39 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:25:39 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:25:44 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:25:44 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:26:01 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:26:01 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:26:19 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:26:19 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:26:31 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:26:31 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:26:42 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:26:42 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:27:18 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:27:18 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:27:31 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:27:31 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:27:46 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:27:46 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:28:09 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:28:09 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:28:25 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:28:25 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:28:34 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:28:34 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:28:59 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:28:59 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:29:14 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:29:14 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:29:37 SELECT 1 FROM users WHERE firstname = 'Tapio' AND lastname = 'Aula'
+2023-09-25 15:29:37 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-25 15:46:42 array (
+)
+2023-09-25 15:47:13 array (
+)
+2023-09-25 15:58:20 array (
+)
+2023-09-25 16:38:07 array (
+)
+2023-09-25 16:38:17 Viestiä ei lähetetty: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2023-09-25 16:39:18 array (
+)
+2023-09-25 16:39:28 Viestiä ei lähetetty: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2023-09-26 08:50:09 array (
+)
+2023-09-26 08:50:12 Viesti lähetetty: jukka.aula@kolumbus.fi!
+2023-09-26 08:50:12 INSERT INTO resetpassword_tokens VALUES (25,'d11bb4040707e95cd4c3dd2d7f4ed094e3ab01c971c5a481b36a40d41eb35faf8e24649c312adf9077a8b60a1e33d289808d','2023-09-26') 
+                      ON DUPLICATE KEY UPDATE token = 'd11bb4040707e95cd4c3dd2d7f4ed094e3ab01c971c5a481b36a40d41eb35faf8e24649c312adf9077a8b60a1e33d289808d',voimassa = '2023-09-26'
+2023-09-26 09:44:32 SELECT 1 FROM users WHERE firstname = 'Jukka' AND lastname = 'Aula'
+2023-09-26 09:44:32 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-26 09:46:04 SELECT 1 FROM users WHERE firstname = 'Jukka' AND lastname = 'Aula'
+2023-09-26 09:46:04 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-26 09:46:13 SELECT 1 FROM users WHERE firstname = 'Jukka' AND lastname = 'Aula'
+2023-09-26 09:46:13 array (
+  'email' => 'Sähköpostiosoite on jo käytössä',
+  'firstname' => 'Nimi on jo käytössä',
+  'lastname' => 'Nimi on jo käytössä',
+)
+2023-09-26 10:55:44 array (
+)
+2023-09-26 11:07:49 array (
+)
+2023-09-26 11:07:49 matti.meikalainen@omnia.fi:Tuntematon sähköpostiosoite
+2023-09-26 11:07:53 array (
+)
+2023-09-26 11:07:53 matti.meikalainen@omnia.fi:Tuntematon sähköpostiosoite
+2023-09-26 11:10:32 array (
+)
+2023-09-26 11:10:32 matti.meikalainen@omnia.fi:Tuntematon sähköpostiosoite
+2023-09-26 11:10:50 array (
+)
+2023-09-26 11:10:50 matti.meikalainen@omnia.fi:Tuntematon sähköpostiosoite
+2023-09-26 11:12:08 array (
+)
+2023-09-26 11:12:08 matti.meikalainen@omnia.fi:Tuntematon sähköpostiosoite
+2023-09-26 11:12:38 array (
+)
+2023-09-26 11:12:38 matti.meikalainen@omnia.fi:Tuntematon sähköpostiosoite
+2023-09-26 11:16:57 array (
+)
+2023-09-26 11:16:57 matti.meikalainen@omnia.fi:Tuntematon sähköpostiosoite
+2023-09-26 11:41:10 array (
+)
+2023-09-26 11:41:13 Viesti lähetetty: jukka.aula@omnia.fi!
+2023-09-26 11:41:13 INSERT INTO resetpassword_tokens VALUES (17,'6da7f5a9ecfe243f05838c0c09c5b6cad04ce5395c245522fd2109a65c4bac25928ccbb6a68a79100009a541779d3ba533bb','2023-09-26') 
+                      ON DUPLICATE KEY UPDATE token = '6da7f5a9ecfe243f05838c0c09c5b6cad04ce5395c245522fd2109a65c4bac25928ccbb6a68a79100009a541779d3ba533bb',voimassa = '2023-09-26'
+2023-09-26 11:51:18 array (
+)
+2023-09-26 11:51:20 Viesti lähetetty: jukka.aula@omnia.fi!
+2023-09-26 11:51:20 INSERT INTO resetpassword_tokens (users_id,token,voimassa) VALUES (17,'98358b4487bd52835c20610c99b34e159190f8a74797fc55805ded6427ceacf7ed38a455a06e10b26c46a7988ab5cd8a89ee','2023-09-26') 
+                      ON DUPLICATE KEY UPDATE token = '98358b4487bd52835c20610c99b34e159190f8a74797fc55805ded6427ceacf7ed38a455a06e10b26c46a7988ab5cd8a89ee',voimassa = '2023-09-26'
+2023-09-26 11:51:20 Lisättiin 1 token.

@@ -1,9 +1,13 @@
+<?php 
+if (!session_id()) session_start();
+ini_set('default_charset', 'utf-8');
+?>
 <!DOCTYPE html>
 <html lang="fi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="lataus.png">
+<link rel="icon" href="omniamusta_tausta.png">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <link rel="stylesheet" href="navbar.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
@@ -15,19 +19,20 @@
 </head>
 <body>
 <?php 
-if (!session_id()) session_start();
-ini_set('default_charset', 'utf-8');
 error_reporting(E_ALL);
 require "asetukset.php";
 include "debuggeri.php";
-include "rememberme.php";
+/* Huom. suojatulla sivulla on jo include "rememberme.php"; */
+if (!isset($loggedIn)){
+  include "rememberme.php";
+  $loggedIn = loggedIn();
+  }
 register_shutdown_function('debuggeri_shutdown');
 $active = basename($_SERVER['PHP_SELF'], ".php");
-$loggedIn = loggedIn();
 
 function active($sivu,$active){
-    return $active == $sivu ? 'active' : '';  
-    }
+  return $active == $sivu ? 'active' : '';  
+  }
 ?>
 <nav>
 <a class="brand-logo" href="index.php">
@@ -38,17 +43,12 @@ function active($sivu,$active){
 <a class="<?= ($active == 'kuvagalleria') ? 'active':''; ?>" href="kuvagalleria.php">Kuvagalleria</a>
 <a class="<?= ($active == 'phpinfo') ? 'active':''; ?>" href="phpinfo.php">phpinfo</a>
 <?php
-  if ($loggedIn) {
-    echo "<a class='".active('profiili',$active). "' href='profiili.php'>Profiili</a>";
-    //echo "<div class='nav-suojaus'>";
-    echo '<a class="nav-suojaus" href="poistu.php">Poistu</a>';
-    //echo "</div>";
-    }
-  else {
-    //echo "<div class='nav-suojaus'>";
-    echo "<a class='nav-suojaus ".active('login',$active)."' href='login.php'>Kirjautuminen</a>";
-    //echo "</div>";
-    }
-  ?>
-
+if ($loggedIn) {
+  echo "<a class='".active('profiili',$active). "' href='profiili.php'>Profiili</a>";
+  echo '<a class="nav-suojaus" href="poistu.php">Poistu</a>';
+  }
+else {
+  echo "<a class='nav-suojaus ".active('login',$active)."' href='login.php'>Kirjautuminen</a>";
+  }
+?>
 </nav>

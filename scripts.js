@@ -49,6 +49,11 @@ document.querySelector("input").onchange = () => {
     const formElements = Array.from(form.elements).filter(element => {
       return element.tagName !== 'BUTTON' && element.tagName !== 'LABEL';
       });
+
+    formElements.forEach(input => input.addEventListener('input', 
+      () => input.classList.remove('is-invalid'))
+      );
+    
     form.addEventListener("submit", event => {
       if (!form.checkValidity()) {
             formElements.forEach(input => {

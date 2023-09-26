@@ -1,24 +1,36 @@
 <?php
 /* ALOITUS */   
+$display = "d-none";
+$message = "";
+$success = "success";
+$ilmoitukset['errorMsg'] = 'Kirjautuminen epäonnistui. '; 
+
 if (isset($_POST['painike'])){
    foreach ($_POST as $kentta => $arvo) {
-      $$kentta = $yhteys->real_escape_string(strip_tags(trim($arvo)));
       if (in_array($kentta, $pakolliset) and empty($arvo)) {
           $errors[$kentta] = $virheilmoitukset[$kentta]['valueMissing'];
           }
       else {
-          if (isset($patterns[$kentta]) and !preg_match($patterns[$kentta], $arvo)) {
-              $errors[$kentta] = $virheilmoitukset[$kentta]['patternMismatch'];
-              }
-          }
+         if (isset($patterns[$kentta]) and !preg_match($patterns[$kentta], $arvo)) {
+            $errors[$kentta] = $virheilmoitukset[$kentta]['patternMismatch'];
+            }
+         else {
+            if (is_array($arvo)) $$kentta = $arvo;
+            else $$kentta = $yhteys->real_escape_string(strip_tags(trim($arvo)));
+            } 
+         }
       }
+
    debuggeri($errors);
    if (!$errors){
       $query = "SELECT id,password,is_active FROM users WHERE email = '$email'";
       $result = $yhteys->query($query);
       if (!$result) die("Tietokantayhteys ei toimi: ".mysqli_error($connection));
       if (!$result->num_rows) {
-         $errors['email'] =  $virheilmoitukset['accountNotExistErr'];
+         debuggeri("$email:$virheilmoitukset[accountNotExistErr]");
+         $message =  $ilmoitukset['errorMsg'];
+         $success = "danger";
+         $display = "d-block";
          }
       else {
          [$id,$password_hash,$is_active] = $result->fetch_row();

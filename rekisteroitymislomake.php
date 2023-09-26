@@ -20,7 +20,7 @@ include "rekisterointi.php";
 <div class="col-sm-8">
 <input pattern="<?= pattern("firstname"); ?>" type="text" class="mb-1 form-control <?= is_invalid('firstname'); ?>" name="firstname" id="firstname" 
        placeholder="Etunimi" value="<?= arvo("firstname"); ?>" 
-       required> 
+       required autofocus> 
 <div class="invalid-feedback">
 <?= $errors['firstname'] ?? ""; ?>    
 </div>
@@ -71,7 +71,7 @@ include "rekisterointi.php";
 </div>
 </div>
 </div>
-<button name='button' type="submit" class="mt-2 float-end btn btn-primary">Rekisteröidy</button>
+<button name='painike' type="submit" class="mt-3 float-end btn btn-primary">Rekisteröidy</button>
 </fieldset>
 
 </form>

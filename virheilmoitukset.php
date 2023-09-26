@@ -1,5 +1,12 @@
 <?php
-$errors = $errors ?? [];
+/* Virheilmoituksia on ainakin kolmea tyyppiä:
+1. Käyttäjän syötteiden virheilmoitukset, jotka näytetään lomakkeella
+2. Tietokannan tai muut palvelimen virheilmoitukset, jotka näytetään lomakkeella
+3. Muut palvelimen virheilmoitukset, jotka näytetään esim. lomakkeen alla
+*/ 
+
+
+$errors ??= [];
 $kentat ??= ['firstname','lastname','email','mobilenumber','password','password2'];
 $kentat_suomi ??= ['etunimi','sukunimi','sähköpostiosoite','matkapuhelinnumero','salasana','salasana'];
 $pakolliset ??= ['firstname','lastname','email','password','password2'];
@@ -56,7 +63,6 @@ function validationMessages($kentat){
         return (isset($GLOBALS['errors'][$kentta])) ? "is-invalid" : "";
         }       
     
-
 $virheilmoitukset = validationMessages($kentat);
 $virheilmoitukset['password']['patternMismatch'] = "Salasanan pitää olla vähintään 12 merkkiä pitkä";    
 $virheilmoitukset['password2']['valueMissing'] = "Anna salasana uudestaan"; 
@@ -64,7 +70,9 @@ $virheilmoitukset['password2']['customError'] = "Salasanat eivät täsmää";
 $virheilmoitukset['email']['emailExistsError'] = "Sähköpostiosoite on jo käytössä";     
 $virheilmoitukset['firstname']['nameExistsError'] = "Nimi on jo käytössä";  
 $virheilmoitukset['lastname']['nameExistsError'] = "Nimi on jo käytössä";  
-$virheilmoitukset['accountNotExistErr'] = "Tuntematon sähköpostiosoite";   
+$virheilmoitukset['accountNotExistErr'] = "Tuntematon sähköpostiosoite"; 
+$virheilmoitukset['accountExistsMsg'] = "Sähköposti on lähetetty antamaasi sähköpostiosoitteeseen";   
 $virheilmoitukset['verificationRequiredErr'] = "Vahvista sähköpostiosoite ensin";
 $virheilmoitukset['emailPwdErr'] = "Väärä käyttäjätunnus tai salasana";
+$virheilmoitukset['emailErr'] = "Sähköpostin lähetys epäonnistui, yritä myöhemmin uudelleen";
 ?>

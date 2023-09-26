@@ -1,11 +1,11 @@
 .brand-logo {
-  max-width: 50px;
   padding: 0;
-  margin: 0 10px;
+  margin:0 20px 0 0;
+  text-align: left;
 }
 
 .brand-logo img {
-  max-height: 43px;
+  max-height: 54px;
   object-fit: contain;
 }
 
@@ -44,7 +44,7 @@ nav .icon {
   right: 0;
   font-size: 24px; 
   cursor: pointer; 
-  padding: 5px 10px;
+  padding: 10px 10px;
 }
   
 nav .close {

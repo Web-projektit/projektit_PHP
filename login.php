@@ -1,6 +1,11 @@
 <?php 
+include "rememberme.php";
+if ($loggedIn = loggedIn()) {
+    header("location: profiili.php");
+    exit;
+    }
 $title = 'Kirjautuminen';
-$css = 'login.css';
+//$css = 'login.css';
 
 /* Lomakkeen kentät, nimet samat kuin users-taulussa. */
 $kentat = ['email','password','rememberme'];
@@ -56,7 +61,7 @@ include('kasittelija_login.php');
 
 
 <div class="div-button">
-<input type="submit" name="painike" class="offset-sm-4 mt-2 mb-2 btn btn-primary" value="Kirjaudu">  
+<input type="submit" name="painike" class="offset-sm-4 mt-3 mb-2 btn btn-primary" value="Kirjaudu">  
 </div>
 
 <div class="row offset-sm-4">
@@ -80,6 +85,12 @@ include('kasittelija_login.php');
     echo "</div>";
     }*/
 ?>
+
+<div id="ilmoitukset" class="alert alert-<?= $success ;?> alert-dismissible fade show <?= $display ?? ""; ?>" role="alert">
+<p><?= $message; ?></p>
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
 </div>
 <?php
 include('footer.html');

@@ -4,19 +4,21 @@ $message = "";
 $success = "success";
 $lisays = $lisattiin_token = $lahetetty = false;
 
-if (isset($_POST['button'])) {
-
-foreach ($_POST as $kentta => $arvo) {
-    $$kentta = $yhteys->real_escape_string(strip_tags(trim($arvo)));
-    if (in_array($kentta, $pakolliset) and empty($arvo)) {
-        $errors[$kentta] = $virheilmoitukset[$kentta]['valueMissing'];
-        }
-    else {
-        if (isset($patterns[$kentta]) and !preg_match($patterns[$kentta], $arvo)) {
-            $errors[$kentta] = $virheilmoitukset[$kentta]['patternMismatch'];
+if (isset($_POST['painike'])){
+    foreach ($_POST as $kentta => $arvo) {
+        if (in_array($kentta, $pakolliset) and empty($arvo)) {
+            $errors[$kentta] = $virheilmoitukset[$kentta]['valueMissing'];
+            }
+        else {
+            if (isset($patterns[$kentta]) and !preg_match($patterns[$kentta], $arvo)) {
+                $errors[$kentta] = $virheilmoitukset[$kentta]['patternMismatch'];
+                }
+            else {
+                if (is_array($arvo)) $$kentta = $arvo;
+                else $$kentta = $yhteys->real_escape_string(strip_tags(trim($arvo)));
+                } 
             }
         }
-    }
 
 if (empty($errors['password2']) and empty($errors['password'])) {
     if ($_POST['password'] != $_POST['password2']) {
@@ -24,6 +26,7 @@ if (empty($errors['password2']) and empty($errors['password'])) {
         }
     }
     
+if (empty($errors)) {    
 $query = "SELECT 1 FROM users WHERE email = '$email'";
 $result = $yhteys->query($query);
 if ($result->num_rows > 0) {
@@ -37,6 +40,7 @@ if ($result->num_rows > 0) {
     $errors['firstname'] = $virheilmoitukset['firstname']['nameExistsError'];
     $errors['lastname'] = $virheilmoitukset['lastname']['nameExistsError'];
     }    
+}    
 
 debuggeri($errors);    
 if (empty($errors)) {
@@ -64,7 +68,7 @@ if ($lisattiin_token) {
     }   
 
 if ($lahetetty){
-    $message = "Tiedot on allennettu. Sinulle on lähetty antamaasi sähköpostiosoitteeseen
+    $message = "Tiedot on tallennettu. Sinulle on lähetty antamaasi sähköpostiosoitteeseen
                 vahvistuspyyntö. Vahvista siinä olevasta linkistä sähköpostiosoitteesi.";
 
     }

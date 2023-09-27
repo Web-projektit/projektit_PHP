@@ -44,8 +44,9 @@ if ($result->num_rows > 0) {
 
 debuggeri($errors);    
 if (empty($errors)) {
+    $created = date('Y-m-d H:i:s');
     $password = password_hash($password, PASSWORD_DEFAULT);
-    $query = "INSERT INTO users (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$password')";
+    $query = "INSERT INTO users (firstname, lastname, email, created, password) VALUES ('$firstname', '$lastname', '$email', '$created', $password')";
     $result = $yhteys->query($query);
     $lisays = $yhteys->affected_rows;
     }

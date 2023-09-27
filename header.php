@@ -20,13 +20,14 @@ ini_set('default_charset', 'utf-8');
 <body>
 <?php 
 error_reporting(E_ALL);
-require "asetukset.php";
-include "debuggeri.php";
+require_once "asetukset.php";
+include_once "debuggeri.php";
 /* Huom. suojatulla sivulla on jo include "rememberme.php"; */
 if (!isset($loggedIn)){
   include "rememberme.php";
   $loggedIn = loggedIn();
   }
+debuggeri("loggedIn:$loggedIn");  
 register_shutdown_function('debuggeri_shutdown');
 $active = basename($_SERVER['PHP_SELF'], ".php");
 
@@ -43,12 +44,28 @@ function active($sivu,$active){
 <a class="<?= ($active == 'kuvagalleria') ? 'active':''; ?>" href="kuvagalleria.php">Kuvagalleria</a>
 <a class="<?= ($active == 'phpinfo') ? 'active':''; ?>" href="phpinfo.php">phpinfo</a>
 <?php
+/*if ($loggedIn === 'admin') {
+  echo "<a class='".active('kayttajat',$active). "' href='kayttajat.php'>Käyttäjät</a>";
+  }
 if ($loggedIn) {
   echo "<a class='".active('profiili',$active). "' href='profiili.php'>Profiili</a>";
   echo '<a class="nav-suojaus" href="poistu.php">Poistu</a>';
   }
-else {
+if (!$loggedIn) {
   echo "<a class='nav-suojaus ".active('login',$active)."' href='login.php'>Kirjautuminen</a>";
-  }
+  }*/
+
+switch ($loggedIn) {
+  case 'admin':
+    echo "<a class='".active('kayttajat',$active). "' href='kayttajat.php'>Käyttäjät</a>";
+  case true:
+    echo "<a class='".active('profiili',$active). "' href='profiili.php'>Profiili</a>";
+    echo '<a class="nav-suojaus" href="poistu.php">Poistu</a>';
+    break;
+  default:
+    echo "<a class='nav-suojaus ".active('login',$active)."' href='login.php'>Kirjautuminen</a>";
+    break;
+} 
+
 ?>
 </nav>

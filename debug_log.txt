@@ -318,3 +318,362 @@
 2023-09-26 11:51:20 INSERT INTO resetpassword_tokens (users_id,token,voimassa) VALUES (17,'98358b4487bd52835c20610c99b34e159190f8a74797fc55805ded6427ceacf7ed38a455a06e10b26c46a7988ab5cd8a89ee','2023-09-26') 
                       ON DUPLICATE KEY UPDATE token = '98358b4487bd52835c20610c99b34e159190f8a74797fc55805ded6427ceacf7ed38a455a06e10b26c46a7988ab5cd8a89ee',voimassa = '2023-09-26'
 2023-09-26 11:51:20 Lisättiin 1 token.
+2023-09-27 09:52:29 SELECT users_id FROM resetpassword_tokens WHERE token = '' AND voimassa >= '2023-09-27'
+2023-09-27 10:07:03 SELECT users_id FROM resetpassword_tokens WHERE token = '98358b4487bd52835c20610c99b34e159190f8a74797fc55805ded6427ceacf7ed38a455a06e10b26c46a7988ab5cd8a89ee' AND voimassa >= '2023-09-27'
+2023-09-27 10:14:55 SELECT users_id FROM resetpassword_tokens WHERE token = '98358b4487bd52835c20610c99b34e159190f8a74797fc55805ded6427ceacf7ed38a455a06e10b26c46a7988ab5cd8a89ee' AND voimassa >= '2023-09-27'
+2023-09-27 10:17:51 SELECT users_id FROM resetpassword_tokens WHERE token = '98358b4487bd52835c20610c99b34e159190f8a74797fc55805ded6427ceacf7ed38a455a06e10b26c46a7988ab5cd8a89ee' AND voimassa >= '2023-09-27'
+2023-09-27 10:18:19 SELECT users_id FROM resetpassword_tokens WHERE token = '98358b4487bd52835c20610c99b34e159190f8a74797fc55805ded6427ceacf7ed38a455a06e10b26c46a7988ab5cd8a89ee' AND voimassa >= '2023-09-27'
+2023-09-27 10:18:46 SELECT users_id FROM resetpassword_tokens WHERE token = '98358b4487bd52835c20610c99b34e159190f8a74797fc55805ded6427ceacf7ed38a455a06e10b26c46a7988ab5cd8a89ee' AND voimassa >= '2023-09-27'
+2023-09-27 10:19:02 SELECT users_id FROM resetpassword_tokens WHERE token = '98358b4487bd52835c20610c99b34e159190f8a74797fc55805ded6427ceacf7ed38a455a06e10b26c46a7988ab5cd8a89ee' AND voimassa >= '2023-09-27'
+2023-09-27 10:19:33 array (
+)
+2023-09-27 10:19:35 Viesti lähetetty: jukka.aula@kolumbus.fi!
+2023-09-27 10:19:35 INSERT INTO resetpassword_tokens (users_id,token,voimassa) VALUES (25,'338accdc21e1e9a2aec86524ece3d1a331d72afc819123877342b71485d9f117e13666d017498b4c0e245666b249e457ff60','2023-09-27') 
+                      ON DUPLICATE KEY UPDATE token = '338accdc21e1e9a2aec86524ece3d1a331d72afc819123877342b71485d9f117e13666d017498b4c0e245666b249e457ff60',voimassa = '2023-09-27'
+2023-09-27 10:19:35 Lisättiin 1 token.
+2023-09-27 10:20:20 SELECT users_id FROM resetpassword_tokens WHERE token = '338accdc21e1e9a2aec86524ece3d1a331d72afc819123877342b71485d9f117e13666d017498b4c0e245666b249e457ff60' AND voimassa >= '2023-09-27'
+2023-09-27 10:25:17 SELECT users_id FROM resetpassword_tokens WHERE token = '338accdc21e1e9a2aec86524ece3d1a331d72afc819123877342b71485d9f117e13666d017498b4c0e245666b249e457ff60' AND voimassa >= '2023-09-27'
+2023-09-27 10:27:47 SELECT users_id FROM resetpassword_tokens WHERE token = '338accdc21e1e9a2aec86524ece3d1a331d72afc819123877342b71485d9f117e13666d017498b4c0e245666b249e457ff60' AND voimassa >= '2023-09-27'
+2023-09-27 10:28:00 array (
+)
+2023-09-27 10:28:03 Viesti lähetetty: jukka.aula@kolumbus.fi!
+2023-09-27 10:28:03 INSERT INTO resetpassword_tokens (users_id,token,voimassa) VALUES (25,'777fd9a3edd56ffafc74b6d168f4e7c9f7856e3d66c8ac3d98c9a8e8c696ad99898c1095358937c61ffbd3b44a39d758f0f0','2023-09-27') 
+                      ON DUPLICATE KEY UPDATE token = '777fd9a3edd56ffafc74b6d168f4e7c9f7856e3d66c8ac3d98c9a8e8c696ad99898c1095358937c61ffbd3b44a39d758f0f0',voimassa = '2023-09-27'
+2023-09-27 10:28:03 Lisättiin 2 token.
+2023-09-27 10:28:12 SELECT users_id FROM resetpassword_tokens WHERE token = '777fd9a3edd56ffafc74b6d168f4e7c9f7856e3d66c8ac3d98c9a8e8c696ad99898c1095358937c61ffbd3b44a39d758f0f0' AND voimassa >= '2023-09-27'
+2023-09-27 10:28:33 SELECT users_id FROM resetpassword_tokens WHERE token = '777fd9a3edd56ffafc74b6d168f4e7c9f7856e3d66c8ac3d98c9a8e8c696ad99898c1095358937c61ffbd3b44a39d758f0f0' AND voimassa >= '2023-09-27'
+2023-09-27 10:28:45 array (
+)
+2023-09-27 10:28:47 Viesti lähetetty: jukka.aula@kolumbus.fi!
+2023-09-27 10:28:47 INSERT INTO resetpassword_tokens (users_id,token,voimassa) VALUES (25,'290a3f1fbc93cb2e449af9eb1c17bdc444b0f1407bf7737eff16ce68d4ddfd636dd87b3149194caae4d59f0c584b5f0822cd','2023-09-27') 
+                      ON DUPLICATE KEY UPDATE token = '290a3f1fbc93cb2e449af9eb1c17bdc444b0f1407bf7737eff16ce68d4ddfd636dd87b3149194caae4d59f0c584b5f0822cd',voimassa = '2023-09-27'
+2023-09-27 10:28:47 Lisättiin 2 token.
+2023-09-27 10:29:14 SELECT users_id FROM resetpassword_tokens WHERE token = '290a3f1fbc93cb2e449af9eb1c17bdc444b0f1407bf7737eff16ce68d4ddfd636dd87b3149194caae4d59f0c584b5f0822cd' AND voimassa >= '2023-09-27'
+2023-09-27 10:33:37 SELECT users_id FROM resetpassword_tokens WHERE token = '290a3f1fbc93cb2e449af9eb1c17bdc444b0f1407bf7737eff16ce68d4ddfd636dd87b3149194caae4d59f0c584b5f0822cd' AND voimassa >= '2023-09-27'
+2023-09-27 10:33:56 SELECT users_id FROM resetpassword_tokens WHERE token = '290a3f1fbc93cb2e449af9eb1c17bdc444b0f1407bf7737eff16ce68d4ddfd636dd87b3149194caae4d59f0c584b5f0822cd' AND voimassa >= '2023-09-27'
+2023-09-27 10:35:21 SELECT users_id FROM resetpassword_tokens WHERE token = '290a3f1fbc93cb2e449af9eb1c17bdc444b0f1407bf7737eff16ce68d4ddfd636dd87b3149194caae4d59f0c584b5f0822cd' AND voimassa >= '2023-09-27'
+2023-09-27 10:35:40 SELECT users_id FROM resetpassword_tokens WHERE token = '290a3f1fbc93cb2e449af9eb1c17bdc444b0f1407bf7737eff16ce68d4ddfd636dd87b3149194caae4d59f0c584b5f0822cd' AND voimassa >= '2023-09-27'
+2023-09-27 10:35:40 array (
+)
+2023-09-27 10:35:40 DELETE FROM resetpassword_tokens WHERE users_id = 25
+2023-09-27 10:35:40 Poistettiin 1 token.
+2023-09-27 10:36:11 array (
+)
+2023-09-27 10:36:30 array (
+)
+2023-09-27 10:36:41 ,session ja cookie
+2023-09-27 10:36:41 array (
+  'loggedIn' => true,
+)
+2023-09-27 10:36:41 array (
+  'PHPSESSID' => 'lno0ui7l1jpd3aoq9p19v63v1l',
+)
+2023-09-27 10:37:02 array (
+)
+2023-09-27 10:39:20 array (
+)
+2023-09-27 10:39:20 Poistettiin: 0 rememberme_token.
+2023-09-27 10:39:20 Lisättiin: 1 rememberme_token.
+2023-09-27 10:51:59 ,session ja cookie
+2023-09-27 10:51:59 array (
+  'loggedIn' => true,
+  'user_id' => 25,
+)
+2023-09-27 10:51:59 array (
+  'rememberme' => '55b755ed2a1f4c43e59a14e7a5f06f56:9759ea132d94e84af5a24d41f0380d51600619adf9d82e0036611e4970dc01c3',
+  'PHPSESSID' => '4e2ts3dslue8odvibgq0e0h270',
+)
+2023-09-27 10:52:32 array (
+)
+2023-09-27 10:52:32 Poistettiin: 1 rememberme_token.
+2023-09-27 10:52:32 Lisättiin: 1 rememberme_token.
+2023-09-27 10:54:05 ,session ja cookie
+2023-09-27 10:54:05 array (
+  'loggedIn' => true,
+  'user_id' => 25,
+)
+2023-09-27 10:54:05 array (
+  'rememberme' => '404a86146b69611efca662ad650bc257:d66555d7a3e05e684cdcd351d33b827050ff90551e25e5950daab39985e16b69',
+  'PHPSESSID' => 'q9962g80fnuuufgbklu51unf5o',
+)
+2023-09-27 12:15:22 array (
+)
+2023-09-27 13:02:10 array (
+)
+2023-09-27 13:07:51 array (
+)
+2023-09-27 13:08:29 array (
+)
+2023-09-27 13:12:48 POST:array (
+  'email' => 'jukka.aula@omnia.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 13:12:48 array (
+)
+2023-09-27 13:12:48 POST:array (
+)
+2023-09-27 13:15:35 POST:array (
+  'email' => 'jukka.aula@omnia.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 13:15:35 array (
+)
+2023-09-27 13:15:35 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@omnia.fi'
+2023-09-27 13:15:35 POST:array (
+)
+2023-09-27 13:23:21 POST:array (
+  'email' => 'jukka.aula@omnia.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 13:23:21 array (
+)
+2023-09-27 13:23:21 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@omnia.fi'
+2023-09-27 13:23:21 POST:array (
+)
+2023-09-27 13:23:38 POST:array (
+)
+2023-09-27 13:27:01 POST:array (
+  'email' => 'jukka.aula@omnia.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 13:27:01 array (
+)
+2023-09-27 13:27:01 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@omnia.fi'
+2023-09-27 13:27:01 POST:array (
+)
+2023-09-27 13:31:52 POST:array (
+  'email' => 'jukka.aula@omnia.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 13:31:52 array (
+)
+2023-09-27 13:31:52 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@omnia.fi'
+2023-09-27 13:33:36 POST:array (
+)
+2023-09-27 13:33:49 POST:array (
+  'email' => 'jukka.aula@kolumbus.fi',
+  'password' => 'jukka12345678',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 13:33:49 array (
+)
+2023-09-27 13:33:49 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@kolumbus.fi'
+2023-09-27 13:44:24 loggedIn:1
+2023-09-27 13:47:34 ,session ja cookie
+2023-09-27 13:47:34 array (
+  'loggedIn' => 'user',
+)
+2023-09-27 13:47:34 array (
+  'PHPSESSID' => 'nthds2jepe068j10jg9lojv9cs',
+)
+2023-09-27 13:47:34 loggedIn:
+2023-09-27 13:47:34 POST:array (
+)
+2023-09-27 13:47:43 loggedIn:
+2023-09-27 13:47:43 POST:array (
+  'email' => 'jukka.aula@kolumbus.fi',
+  'password' => 'jukka12345678',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 13:47:43 array (
+)
+2023-09-27 13:47:43 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@kolumbus.fi'
+2023-09-27 13:47:43 loggedIn:1
+2023-09-27 13:48:37 loggedIn:1
+2023-09-27 13:49:43 loggedIn:1
+2023-09-27 13:57:44 loggedIn:user
+2023-09-27 13:57:55 ,session ja cookie
+2023-09-27 13:57:55 array (
+  'loggedIn' => 'user',
+)
+2023-09-27 13:57:55 array (
+  'PHPSESSID' => 'bi8gsqvdihoc1fg3bu1nh3jljf',
+)
+2023-09-27 13:57:55 loggedIn:
+2023-09-27 13:57:55 POST:array (
+)
+2023-09-27 13:58:05 loggedIn:
+2023-09-27 13:58:05 POST:array (
+  'email' => 'jukka.aula@kolumbus.fi',
+  'password' => 'jukka12345678',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 13:58:05 array (
+)
+2023-09-27 13:58:05 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@kolumbus.fi'
+2023-09-27 13:58:05 loggedIn:user
+2023-09-27 13:58:10 loggedIn:user
+2023-09-27 13:58:13 ,session ja cookie
+2023-09-27 13:58:13 array (
+  'loggedIn' => 'user',
+)
+2023-09-27 13:58:13 array (
+  'PHPSESSID' => '40ccdgkpoie1uhqo38dvm6cbtu',
+)
+2023-09-27 13:58:13 loggedIn:
+2023-09-27 13:58:13 POST:array (
+)
+2023-09-27 13:58:23 loggedIn:
+2023-09-27 13:58:23 POST:array (
+  'email' => 'jukka.aula@omnia.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 13:58:23 array (
+)
+2023-09-27 13:58:23 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@omnia.fi'
+2023-09-27 13:58:24 loggedIn:admin
+2023-09-27 14:00:58 loggedIn:admin
+2023-09-27 14:02:02 loggedIn:admin
+2023-09-27 14:02:07 loggedIn:admin
+2023-09-27 14:02:10 loggedIn:admin
+2023-09-27 14:02:13 ,session ja cookie
+2023-09-27 14:02:13 array (
+  'loggedIn' => 'admin',
+)
+2023-09-27 14:02:13 array (
+  'PHPSESSID' => 'ivcd3soogto65r9p51puus1iuk',
+)
+2023-09-27 14:02:13 loggedIn:
+2023-09-27 14:02:13 POST:array (
+)
+2023-09-27 14:02:22 loggedIn:
+2023-09-27 14:02:22 POST:array (
+  'email' => 'jukka.aula@omnia.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 14:02:22 array (
+)
+2023-09-27 14:02:22 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@omnia.fi'
+2023-09-27 14:02:23 loggedIn:admin
+2023-09-27 14:02:26 ,session ja cookie
+2023-09-27 14:02:26 array (
+  'loggedIn' => 'admin',
+)
+2023-09-27 14:02:26 array (
+  'PHPSESSID' => '0p1i1dunee3161824aabb7vni7',
+)
+2023-09-27 14:02:26 loggedIn:
+2023-09-27 14:02:26 POST:array (
+)
+2023-09-27 14:02:37 loggedIn:
+2023-09-27 14:02:37 POST:array (
+  'email' => 'jukka.aula@kolumbus.fi',
+  'password' => 'jukka12345678',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 14:02:37 array (
+)
+2023-09-27 14:02:37 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@kolumbus.fi'
+2023-09-27 14:02:37 loggedIn:user
+2023-09-27 14:22:24 loggedIn:user
+2023-09-27 14:22:27 ,session ja cookie
+2023-09-27 14:22:27 array (
+  'loggedIn' => 'user',
+)
+2023-09-27 14:22:27 array (
+  'PHPSESSID' => '7noh3ms6ujn1d0ifn7oqbbluii',
+)
+2023-09-27 14:22:27 loggedIn:
+2023-09-27 14:22:27 POST:array (
+)
+2023-09-27 14:22:38 loggedIn:
+2023-09-27 14:22:38 POST:array (
+  'email' => 'jukka.aula@kolumbus.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 14:22:38 array (
+)
+2023-09-27 14:22:38 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@kolumbus.fi'
+2023-09-27 14:22:48 loggedIn:
+2023-09-27 14:22:48 POST:array (
+  'email' => 'jukka.aula@kolumbus.fi',
+  'password' => 'jukka12345678',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 14:22:48 array (
+)
+2023-09-27 14:22:48 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@kolumbus.fi'
+2023-09-27 14:22:48 loggedIn:user
+2023-09-27 14:22:56 loggedIn:user
+2023-09-27 14:23:00 loggedIn:user
+2023-09-27 14:23:03 ,session ja cookie
+2023-09-27 14:23:03 array (
+  'loggedIn' => 'user',
+)
+2023-09-27 14:23:03 array (
+  'PHPSESSID' => 'ut6vstieo7jhcfiof9q79jrii2',
+)
+2023-09-27 14:23:03 loggedIn:
+2023-09-27 14:23:03 POST:array (
+)
+2023-09-27 14:23:12 loggedIn:
+2023-09-27 14:23:12 POST:array (
+  'email' => 'jukka.aula@omnia.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 14:23:12 array (
+)
+2023-09-27 14:23:12 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@omnia.fi'
+2023-09-27 14:23:12 loggedIn:admin
+2023-09-27 14:23:19 loggedIn:admin
+2023-09-27 14:23:21 ,session ja cookie
+2023-09-27 14:23:21 array (
+  'loggedIn' => 'admin',
+)
+2023-09-27 14:23:21 array (
+  'PHPSESSID' => '9inuik78vsl8s7k1j5ue15bo5n',
+)
+2023-09-27 14:23:21 loggedIn:
+2023-09-27 14:23:21 POST:array (
+)
+2023-09-27 14:41:07 loggedIn:
+2023-09-27 14:41:07 POST:array (
+  'email' => 'jukka.aula@omnia.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 14:41:07 array (
+)
+2023-09-27 14:41:07 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@omnia.fi'
+2023-09-27 14:41:07 loggedIn:admin
+2023-09-27 14:41:16 loggedIn:admin
+2023-09-27 14:41:18 loggedIn:admin
+2023-09-27 14:41:20 ,session ja cookie
+2023-09-27 14:41:20 array (
+  'loggedIn' => 'admin',
+)
+2023-09-27 14:41:20 array (
+  'PHPSESSID' => '87avec0faa283buusif0fvji2g',
+)
+2023-09-27 14:41:20 loggedIn:
+2023-09-27 14:41:20 POST:array (
+)
+2023-09-27 14:41:29 loggedIn:
+2023-09-27 14:41:29 POST:array (
+  'email' => 'jukka.aula@kolumbus.fi',
+  'password' => 'jukka12345678',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 14:41:29 array (
+)
+2023-09-27 14:41:29 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@kolumbus.fi'
+2023-09-27 14:41:29 loggedIn:user
+2023-09-27 14:41:33 ,session ja cookie
+2023-09-27 14:41:33 array (
+  'loggedIn' => 'user',
+)
+2023-09-27 14:41:33 array (
+  'PHPSESSID' => '5qjm51h0thq965h14nt1q2u7jd',
+)
+2023-09-27 14:41:33 loggedIn:
+2023-09-27 14:41:33 POST:array (
+)

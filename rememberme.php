@@ -93,46 +93,70 @@ if (insert_rememberme_token($user_id, $selector, $hash_validator, $expiry)) {
 }
 
 
-function secure_page() {
+/*function secure_page() {
 if (!session_id()) session_start();
-if (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true){
+$loggedIn = $_SESSION['loggedIn'] ?? false;   
+if (!$loggedIn || is_int($loggedIn)) {
     $token = $_COOKIE['rememberme'] ?? '';
     if ($token) {
-        $user = [];
         $token = htmlspecialchars($token);
         if ($user_id = token_is_valid($token)){
             //if (session_regenerate_id()) {
-            $_SESSION['loggedIn'] = true;
-            $_SESSION['user_id'] = $user_id;
-            return true;
-            //}
-            }
+            //$loggedIn = hae_rooli($user_id);
+            $_SESSION['loggedIn'] = $user_id;
+            return $user_id;            }
         }
     $_SESSION['next_page'] = $_SERVER['PHP_SELF']; 
     header("location: login.php");
     exit;  
     }
-return true;    
+return $loggedIn;
+};  */
+
+function secure_page(){
+if (!session_id()) session_start();
+if (!$loggedIn = loggedIn()){
+    $_SESSION['next_page'] = $_SERVER['PHP_SELF']; 
+    header("location: login.php");
+    exit;
+    }
+return $loggedIn;
 }
 
 function loggedIn() {
-if (isset($_SESSION['loggedIn']) && $_SESSION["loggedIn"] === true) return true;
-if ($token = $_COOKIE['rememberme'] ?? '') {
-    $token = htmlspecialchars($token);
-    if ($user_id = token_is_valid($token)) {
-        $_SESSION['loggedIn'] = true;
-        //$_SESSION['user_id'] = $user_id;
-        return $user_id;
+if (!session_id()) session_start();    
+$loggedIn = $_SESSION['loggedIn'] ?? false;   
+/* Huom. loggedIn voi olla 'user', 'admin', jne. 
+   loggedIn voi olla tässä user_id ja eväste vanhentunut.
+   Ilman roolin hakua muista minut vie käyttäjän peruskäyttäjän rooliin. */
+if (!$loggedIn || is_int($loggedIn)) {
+    if ($token = $_COOKIE['rememberme'] ?? '') {
+        $token = htmlspecialchars($token);
+        if ($user_id = token_is_valid($token)) {
+            // $loggedIn = hae_rooli($user_id);
+            $loggedIn = $user_id;
+            $_SESSION['loggedIn'] = $loggedIn;
+            }
         }
     }
-return false;
+return $loggedIn;
 }
-
 
 function nayta_rememberme($kentta){
 $nayta = "";    
 if (!isset($GLOBALS['virheet'][$kentta]) && isset($_POST[$kentta])) $nayta = $_POST[$kentta];
 elseif (loggedIn()) $nayta = 'checked';
 return $nayta; 
+}
+
+function hae_rooli(int $user_id) {
+$yhteys = db_connect();
+$query = "SELECT name FROM users LEFT JOIN roles ON role = roles.id WHERE users.id = $user_id";
+$result = $yhteys->query($query);
+if ($result->num_rows) {
+    [$role] = $result->fetch_row();
+    return $role;
+    }        
+else return false;
 }
 ?>

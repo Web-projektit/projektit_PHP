@@ -4,6 +4,7 @@ $display = "d-none";
 $message = "";
 $success = "success";
 $ilmoitukset['errorMsg'] = 'Kirjautuminen epäonnistui. '; 
+debuggeri("POST:".var_export($_POST,true));
 
 if (isset($_POST['painike'])){
    foreach ($_POST as $kentta => $arvo) {
@@ -23,7 +24,8 @@ if (isset($_POST['painike'])){
 
    debuggeri($errors);
    if (!$errors){
-      $query = "SELECT id,password,is_active FROM users WHERE email = '$email'";
+      $query = "SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = '$email'";
+      debuggeri($query);
       $result = $yhteys->query($query);
       if (!$result) die("Tietokantayhteys ei toimi: ".mysqli_error($connection));
       if (!$result->num_rows) {
@@ -33,11 +35,11 @@ if (isset($_POST['painike'])){
          $display = "d-block";
          }
       else {
-         [$id,$password_hash,$is_active] = $result->fetch_row();
+         [$id,$password_hash,$is_active,$role] = $result->fetch_row();
          if (password_verify($password, $password_hash)){
             if ($is_active){
                if (!session_id()) session_start();
-               $_SESSION["loggedIn"] = true;
+               $_SESSION["loggedIn"] = $role;
                if ($rememberme) rememberme($id);
                if (isset($_SESSION['next_page'])){
                   $location = $_SESSION['next_page'];

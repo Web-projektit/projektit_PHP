@@ -1,5 +1,7 @@
 <?php 
-include('rememberme.php');
+include "asetukset.php";
+include "db.php";
+include "rememberme.php";
 $loggedIn = secure_page();
 $title = 'Profiili';
 $css = 'profiili.css';

@@ -1,6 +1,8 @@
 <?php
-include('debuggeri.php');
-include('rememberme.php');
+include "debuggeri.php";
+include "asetukset.php";
+include "db.php";
+include "rememberme.php";
 /* Sessionin purkaminen */
 if (!session_id()) session_start();
 if ($user_id = loggedIn() === false) {

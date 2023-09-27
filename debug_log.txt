@@ -707,3 +707,31 @@
 2023-09-27 15:01:32 loggedIn:25
 2023-09-27 15:07:56 loggedIn:25
 2023-09-27 15:08:08 loggedIn:25
+2023-09-27 15:18:31 loggedIn:25
+2023-09-27 15:22:10 loggedIn:25
+2023-09-27 15:22:14 loggedIn:25
+2023-09-27 15:23:23 ,session ja cookie
+2023-09-27 15:23:23 array (
+  'loggedIn' => 25,
+)
+2023-09-27 15:23:23 array (
+  'rememberme' => '17e760c40fed4bd1e733ff15a25b7c16:95252740cc9709165ab3d44d4395f5bbc3ef3216ae66d6f627ca087b0f3c7816',
+  'PHPSESSID' => 'pvuobufhkufm2a296mu3r5vta4',
+)
+2023-09-27 15:23:23 loggedIn:
+2023-09-27 15:23:23 POST:array (
+)
+2023-09-27 15:23:34 loggedIn:
+2023-09-27 15:23:34 POST:array (
+  'email' => 'jukka.aula@omnia.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 15:23:34 array (
+)
+2023-09-27 15:23:34 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@omnia.fi'
+2023-09-27 15:23:35 loggedIn:admin
+2023-09-27 15:23:40 loggedIn:admin
+2023-09-27 15:23:43 loggedIn:admin
+2023-09-27 15:23:45 loggedIn:admin
+2023-09-27 15:23:52 loggedIn:admin

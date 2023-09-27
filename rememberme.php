@@ -108,9 +108,10 @@ if (!$loggedIn || is_int($loggedIn)) {
 return $loggedIn;
 };  */
 
-function secure_page(){
+function secure_page($role = ''){
 if (!session_id()) session_start();
-if (!$loggedIn = loggedIn()){
+$loggedIn = loggedIn();
+if (!$loggedIn || $role && $role != $loggedIn){
     $_SESSION['next_page'] = $_SERVER['PHP_SELF']; 
     header("location: login.php");
     exit;

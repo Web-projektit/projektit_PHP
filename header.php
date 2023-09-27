@@ -24,6 +24,7 @@ include "debuggeri.php";
 /* Huom. suojatulla sivulla on asetukset,db,rememberme.php; */
 if (!isset($loggedIn)){
   require "asetukset.php";
+  include "db.php";
   include "rememberme.php";
   $loggedIn = loggedIn();
   }

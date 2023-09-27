@@ -16,7 +16,6 @@ if ($parts && count($parts) == 2) return $parts;
 return null;
 }
 
-
 function insert_rememberme_token(int $user_id, string $selector, string $hashed_validator, string $expiry) {
 $yhteys = db_connect();
 $query = "INSERT INTO rememberme_tokens(user_id, selector, hashed_validator, expiry) VALUES(?, ?, ?, ?)";
@@ -26,7 +25,6 @@ $result = $stmt->execute();
 debuggeri("Lisättiin: $stmt->affected_rows rememberme_token.");
 return $result;
 }
-
 
 function find_rememberme_token(string $selector){
 $id = $hashed_validator = $user_id = $expiry = null;    
@@ -51,7 +49,6 @@ debuggeri("Poistettiin: $stmt->affected_rows rememberme_token.");
 return $result;
 }
 
-
 function find_user_by_token(string $token){    
 $tokens = parse_token($token);
 if (!$tokens) return null;
@@ -67,7 +64,6 @@ $result = $stmt->fetch();
 return compact('users_id','email');
 }
 
-
 function token_is_valid(string $token) { 
 // parse the token to get the selector and validator [$selector, $validator] = parse_token($token);
 [$selector, $validator] = parse_token($token);
@@ -76,7 +72,6 @@ if (!$tokens) return false;
 $verified_token = password_verify($validator, $tokens['hashed_validator']);
 return $verified_token ? $tokens['user_id'] : false; 
 }
-
 
 function rememberme(int $user_id, int $day = 30){
 [$selector, $validator, $token] = generate_tokens();

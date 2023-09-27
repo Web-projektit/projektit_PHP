@@ -677,3 +677,33 @@
 2023-09-27 14:41:33 loggedIn:
 2023-09-27 14:41:33 POST:array (
 )
+2023-09-27 14:58:43 loggedIn:
+2023-09-27 14:58:43 POST:array (
+)
+2023-09-27 14:58:53 loggedIn:
+2023-09-27 14:58:53 POST:array (
+  'email' => 'jukka.aula@kolumbus.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 14:58:53 array (
+)
+2023-09-27 14:58:53 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@kolumbus.fi'
+2023-09-27 14:59:03 loggedIn:
+2023-09-27 14:59:03 POST:array (
+  'email' => 'jukka.aula@kolumbus.fi',
+  'password' => 'jukka12345678',
+  'rememberme' => 'checked',
+  'painike' => 'Kirjaudu',
+)
+2023-09-27 14:59:03 array (
+)
+2023-09-27 14:59:03 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@kolumbus.fi'
+2023-09-27 14:59:04 Poistettiin: 1 rememberme_token.
+2023-09-27 14:59:04 Lisättiin: 1 rememberme_token.
+2023-09-27 14:59:04 loggedIn:user
+2023-09-27 14:59:19 loggedIn:user
+2023-09-27 14:59:31 loggedIn:user
+2023-09-27 15:01:32 loggedIn:25
+2023-09-27 15:07:56 loggedIn:25
+2023-09-27 15:08:08 loggedIn:25

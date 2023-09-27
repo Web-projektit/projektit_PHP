@@ -1,4 +1,6 @@
 <?php 
+include "asetukset.php";
+include "db.php";
 include "rememberme.php";
 if ($loggedIn = loggedIn()) {
     header("location: profiili.php");
@@ -15,8 +17,6 @@ include "virheilmoitukset.php";
 $virheilmoitukset_json = json_encode($virheilmoitukset);
 echo "<script>const virheilmoitukset = $virheilmoitukset_json</script>";
 include "header.php"; 
-include('db.php');
-//include('rememberme.php');
 include('kasittelija_login.php');
 ?>
 <div class="container">

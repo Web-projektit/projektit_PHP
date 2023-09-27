@@ -20,10 +20,10 @@ ini_set('default_charset', 'utf-8');
 <body>
 <?php 
 error_reporting(E_ALL);
-require_once "asetukset.php";
-include_once "debuggeri.php";
-/* Huom. suojatulla sivulla on jo include "rememberme.php"; */
+include "debuggeri.php";
+/* Huom. suojatulla sivulla on asetukset,db,rememberme.php; */
 if (!isset($loggedIn)){
+  require "asetukset.php";
   include "rememberme.php";
   $loggedIn = loggedIn();
   }
@@ -34,6 +34,8 @@ $active = basename($_SERVER['PHP_SELF'], ".php");
 function active($sivu,$active){
   return $active == $sivu ? 'active' : '';  
   }
+
+/* Huom. nav-suojaus vie viimeiset linkit oikealle. */
 ?>
 <nav>
 <a class="brand-logo" href="index.php">

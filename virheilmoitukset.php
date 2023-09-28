@@ -11,6 +11,7 @@ $kentat ??= ['firstname','lastname','email','mobilenumber','password','password2
 $kentat_suomi ??= ['etunimi','sukunimi','sähköpostiosoite','matkapuhelinnumero','salasana','salasana'];
 $pakolliset ??= ['firstname','lastname','email','password','password2'];
 $kaannokset = array_combine($kentat,$kentat_suomi);
+$allowed_images = ['gif','png','jpg','jpeg'];
 //$kaannokset = ['firstname' => 'etunimi', 'lastname' => 'sukunimi', 'email' => 'sähköpostiosoite', 'mobilenumber' => 'matkapuhelinnumero', 'password' => 'salasana', 'password2' => 'salasana uudestaan'];
 //$kaannokset = $kentat_suomi[array_search('lastname',$kentat)]
 
@@ -25,6 +26,9 @@ $patterns['email'] = "/^[\w]+[\w.+-]*@[\w-]+(\.[\w-]{2,})?\.[a-zA-Z]{2,}$/";
 $patterns['image'] = "/^[^\s]+\.(jpe?g|png|gif|bmp)$/"; 
 $patterns['rememberme'] = "/^checked$/";
 
+function randomString($length = 3){
+    return bin2hex(random_bytes($length));
+    }
 
 function kaannos($kentta){
     return $GLOBALS['kaannokset'][$kentta];

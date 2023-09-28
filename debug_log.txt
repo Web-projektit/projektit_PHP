@@ -735,3 +735,56 @@
 2023-09-27 15:23:43 loggedIn:admin
 2023-09-27 15:23:45 loggedIn:admin
 2023-09-27 15:23:52 loggedIn:admin
+2023-09-28 09:26:34 ,session ja cookie
+2023-09-28 09:26:34 array (
+  'loggedIn' => 'admin',
+)
+2023-09-28 09:26:34 array (
+  'PHPSESSID' => 'l3h22a021eagge7jt7i662mpkv',
+)
+2023-09-28 09:26:34 loggedIn:
+2023-09-28 09:26:37 loggedIn:
+2023-09-28 09:27:42 loggedIn:
+2023-09-28 09:27:46 loggedIn:
+2023-09-28 09:27:46 POST:array (
+)
+2023-09-28 09:28:18 loggedIn:
+2023-09-28 10:02:24 loggedIn:
+2023-09-28 10:02:24 POST:array (
+)
+2023-09-28 10:02:28 loggedIn:
+2023-09-28 10:05:24 loggedIn:
+2023-09-28 10:19:43 loggedIn:
+2023-09-28 10:28:44 loggedIn:
+2023-09-28 10:31:14 loggedIn:
+2023-09-28 10:32:10 loggedIn:
+2023-09-28 10:34:12 loggedIn:
+2023-09-28 10:38:43 loggedIn:
+2023-09-28 10:40:55 loggedIn:
+2023-09-28 11:50:14 loggedIn:
+2023-09-28 11:50:14 array (
+)
+2023-09-28 11:53:28 loggedIn:
+2023-09-28 11:53:28 array (
+)
+2023-09-28 11:58:57 loggedIn:
+2023-09-28 11:58:57 array (
+)
+2023-09-28 12:01:10 loggedIn:
+2023-09-28 12:01:11 array (
+)
+2023-09-28 12:01:11 INSERT INTO users (firstname, lastname, email, image, created, password) VALUES ('Matti', 'Meikäläinen', 'matti.meikalainen@yritys.fi', NULL, '2023-09-28 12:01:11', $2y$10$pQHI3tLEUtuuUM1ZoM3.Du0SWa7tgC0KX.7iVPRvKpafXmMPSLF8G')
+2023-09-28 12:01:45 loggedIn:
+2023-09-28 12:01:45 array (
+)
+2023-09-28 12:01:45 INSERT INTO users (firstname, lastname, email, image, created, password) VALUES ('Matti', 'Meikäläinen', 'matti.meikalainen@yritys.fi', NULL, '2023-09-28 12:01:45', '$2y$10$HRQY6kQ0c.ac7r2zT36OYOPQCxVUWuSkSZt96gxKoBCuzrvckmtIi')
+2023-09-28 12:01:45 INSERT INTO signup_tokens (users_id,token) VALUES (26,'23c331cf13e49d62354ecac185a3408a')
+2023-09-28 12:01:47 Viesti lähetetty: matti.meikalainen@yritys.fi!
+2023-09-28 13:01:57 loggedIn:
+2023-09-28 13:02:49 loggedIn:
+2023-09-28 13:02:49 File omniavalkea_tausta_bd59a8.png,mime: image/png, png, 20716 tavua
+2023-09-28 13:02:49 array (
+)
+2023-09-28 13:02:49 INSERT INTO users (firstname, lastname, email, image, created, password) VALUES ('Matti', 'Meikäläinen', 'matti.meikalainen@yritys.fi', 'omniavalkea_tausta_bd59a8.png', '2023-09-28 13:02:49', '$2y$10$unG9zucXvyL3WAGyO7F7hO75u2hzfutVgt660KkeQBwHTU82z13M6')
+2023-09-28 13:02:49 INSERT INTO signup_tokens (users_id,token) VALUES (27,'c8e471fef7171e3aea3436884b10e17d')
+2023-09-28 13:02:52 Viesti lähetetty: matti.meikalainen@yritys.fi!

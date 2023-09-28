@@ -4,6 +4,42 @@ $message = "";
 $success = "success";
 $lisays = $lisattiin_token = $lahetetty = false;
 
+
+function hae_kuva($kentta){   
+/* Huom. foreach-silmukka on tässä malliksi, ei valmis.
+   Nimen tarkistukseen ei ole tässä koodia. */
+    $kentat_tiedosto = $GLOBALS['kentat_tiedosto'];   
+    $allowed_images = $GLOBALS['allowed_images'];
+    $virhe = false;   
+    $image = "";
+    foreach ($kentat_tiedosto as $kentta){
+    if (!isset($_FILES[$kentta])) continue;    
+    if (is_uploaded_file($_FILES[$kentta]['tmp_name'])) {
+       $random = randomString(3);
+       $maxsize = PROFIILIKUVAKOKO;
+       $temp_file = $_FILES[$kentta]["tmp_name"];       
+       $filesize = $_FILES[$kentta]['size'];
+       $pathinfo = pathinfo($_FILES[$kentta]["name"]);
+       $filetype = strtolower($pathinfo['extension']);
+       $image = $pathinfo['filename']."_$random.$filetype";
+       $target_dir = PROFIILIKUVAKANSIO;
+       $target_file = "$target_dir/$image";
+       /* Check if image file is a actual image or fake image */
+       if (!$check = getimagesize($temp_file)) $virhe = "Kuva ei kelpaa.";
+       elseif (file_exists($target_file)) $virhe = "Kuvatiedosto on jo olemassa.";
+       elseif (!in_array($filetype,$allowed_images)) $virhe = "Väärä tiedostotyyppi.";
+       elseif ($filesize > $maxsize) $virhe = "Kuvan koon tulee olla korkeintaan 5 MB.";
+       debuggeri("File $image,mime: {$check['mime']}, $filetype, $filesize tavua");
+       if (!$virhe){
+          if (!move_uploaded_file($temp_file,$target_file)) 
+             $virhe = "Kuvan tallennus ei onnistunut.";
+          } 
+       }
+       }
+    return [$image,$virhe];
+    }
+
+
 if (isset($_POST['painike'])){
     foreach ($_POST as $kentta => $arvo) {
         if (in_array($kentta, $pakolliset) and empty($arvo)) {
@@ -26,6 +62,12 @@ if (empty($errors['password2']) and empty($errors['password'])) {
         }
     }
     
+if (empty($errors)){
+    [$image,$virhe] = hae_kuva($kentat_tiedosto);
+    if ($virhe) $errors['image'] = $virhe;
+    $image = ($image) ? "'$image'" : "NULL";
+    }   
+    
 if (empty($errors)) {    
 $query = "SELECT 1 FROM users WHERE email = '$email'";
 $result = $yhteys->query($query);
@@ -46,7 +88,8 @@ debuggeri($errors);
 if (empty($errors)) {
     $created = date('Y-m-d H:i:s');
     $password = password_hash($password, PASSWORD_DEFAULT);
-    $query = "INSERT INTO users (firstname, lastname, email, created, password) VALUES ('$firstname', '$lastname', '$email', '$created', $password')";
+    $query = "INSERT INTO users (firstname, lastname, email, image, created, password) VALUES ('$firstname', '$lastname', '$email', $image, '$created', '$password')";
+    debuggeri($query);
     $result = $yhteys->query($query);
     $lisays = $yhteys->affected_rows;
     }
@@ -82,7 +125,9 @@ else {
     }
 $display = "d-block";
 
-/*var_export($_POST);
+/*
+var_export($_POST);
+var_export($_FILES);
 echo "<br>";
 var_export($errors);*/
 }

@@ -18,6 +18,31 @@ try {
     }
 };
 
+const tyhjennaKuva = element => {
+  document.querySelector('#'+element).value = '';
+  document.querySelector('#'+element+ '~ .previewDiv .previewImage').src = '';
+  document.querySelector('#'+element+ '~ .previewDiv').classList.add('d-none');
+  }
+
+const previewImage = document.querySelector('#previewImage');
+if (previewImage){
+  const fileInput = document.querySelector('#image');
+  const previewDiv = document.querySelector('#previewDiv');
+
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    //console.log(file);
+    const reader = new FileReader();
+    reader.addEventListener('load', () => {
+      previewImage.src = reader.result;
+    });
+
+    if (file) {
+      previewDiv.classList.remove('d-none');
+      reader.readAsDataURL(file);
+      }
+    });
+  }
 
 //document.querySelector("#tallenna").addEventListener("click", menutoggle)
 //document.querySelector("#tallenna").onclick = menutoggle;

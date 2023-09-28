@@ -71,3 +71,13 @@ legend {
 .div-button {
   padding-left:12px;
   }
+
+.previewImage {
+  max-width: 100%; 
+  max-height: 100%;
+  }
+  
+
+.previewDiv button {
+  float:right;
+  }  

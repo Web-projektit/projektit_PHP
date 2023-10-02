@@ -788,3 +788,28 @@
 2023-09-28 13:02:49 INSERT INTO users (firstname, lastname, email, image, created, password) VALUES ('Matti', 'Meikäläinen', 'matti.meikalainen@yritys.fi', 'omniavalkea_tausta_bd59a8.png', '2023-09-28 13:02:49', '$2y$10$unG9zucXvyL3WAGyO7F7hO75u2hzfutVgt660KkeQBwHTU82z13M6')
 2023-09-28 13:02:49 INSERT INTO signup_tokens (users_id,token) VALUES (27,'c8e471fef7171e3aea3436884b10e17d')
 2023-09-28 13:02:52 Viesti lähetetty: matti.meikalainen@yritys.fi!
+2023-10-02 09:35:44 loggedIn:
+2023-10-02 09:35:49 loggedIn:
+2023-10-02 09:35:49 POST:array (
+)
+2023-10-02 09:36:03 loggedIn:
+2023-10-02 09:36:03 POST:array (
+  'email' => 'jukka.aula@kolumbus.fi',
+  'password' => 'jukka1234567',
+  'painike' => 'Kirjaudu',
+)
+2023-10-02 09:36:03 array (
+)
+2023-10-02 09:36:03 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@kolumbus.fi'
+2023-10-02 09:36:13 loggedIn:
+2023-10-02 09:36:13 POST:array (
+  'email' => 'jukka.aula@kolumbus.fi',
+  'password' => 'jukka12345678',
+  'painike' => 'Kirjaudu',
+)
+2023-10-02 09:36:13 array (
+)
+2023-10-02 09:36:13 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@kolumbus.fi'
+2023-10-02 09:36:13 loggedIn:user
+2023-10-02 09:55:42 loggedIn:user
+2023-10-02 09:57:43 loggedIn:user

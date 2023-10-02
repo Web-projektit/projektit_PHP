@@ -1,4 +1,5 @@
 <?php
+/* Huom. aktivointitokenin voimassaoloa ei tässä tarkisteta.*/
 $email_verified = $email_already_verified = $activation_error = "";
 $token = $_GET['token'] ?? "";
 if ($token) {

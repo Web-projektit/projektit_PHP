@@ -3,8 +3,8 @@ include "asetukset.php";
 include "db.php";
 include "rememberme.php";
 $loggedIn = secure_page('admin');
-$title = 'Profiili';
-$css = 'profiili.css';
+$title = 'Käyttäjähallinta';
+//$css = 'Kayttajahallinta.css';
 include "header.php"; 
 ?>
 <div class="container">

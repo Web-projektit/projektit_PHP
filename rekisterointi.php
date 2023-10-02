@@ -95,6 +95,7 @@ if (empty($errors)) {
     }
 
 if ($lisays) {
+    
     $id = $yhteys->insert_id;
     $token = md5(rand().time());
     $query = "INSERT INTO signup_tokens (users_id,token) VALUES ($id,'$token')";

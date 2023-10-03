@@ -45,7 +45,6 @@ function active($sivu,$active){
 <label for="toggle-btn" class="icon open"><i class="fa fa-bars"></i></label>
 <label for="toggle-btn" class="icon close"><i class="fa fa-times"></i></label>
 <a class="<?= ($active == 'kuvagalleria') ? 'active':''; ?>" href="kuvagalleria.php">Kuvagalleria</a>
-<a class="<?= ($active == 'phpinfo') ? 'active':''; ?>" href="phpinfo.php">phpinfo</a>
 <?php
 /*if ($loggedIn === 'admin') {
   echo "<a class='".active('kayttajat',$active). "' href='kayttajat.php'>Käyttäjät</a>";
@@ -63,10 +62,12 @@ switch ($loggedIn) {
     echo "<a class='".active('kayttajat',$active). "' href='kayttajat.php'>Käyttäjät</a>";
   case true:
     echo "<a class='".active('profiili',$active). "' href='profiili.php'>Profiili</a>";
-    echo '<a class="nav-suojaus" href="poistu.php">Poistu</a>';
+    echo "<a class='nav-suojaus ".active('phpinfo',$active). "' href='phpinfo.php'>phpinfo</a>";
+    echo "<a class='".active('fake',$active). "' href='fake.php'>fake</a>";
+    echo '<a href="poistu.php">Poistu</a>';
     break;
   default:
-    echo "<a class='nav-suojaus ".active('login',$active)."' href='login.php'>Kirjautuminen</a>";
+    echo "<a class='".active('login',$active)."' href='login.php'>Kirjautuminen</a>";
     break;
 } 
 

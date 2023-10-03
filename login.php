@@ -7,7 +7,7 @@ if ($loggedIn = loggedIn()) {
     exit;
     }
 $title = 'Kirjautuminen';
-//$css = 'login.css';
+$css = 'login.css';
 
 /* Lomakkeen kentät, nimet samat kuin users-taulussa. */
 $kentat = ['email','password','rememberme'];

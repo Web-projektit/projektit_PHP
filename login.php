@@ -15,9 +15,9 @@ $kentat_suomi = ['sähköpostiosoite','salasana','muista minut'];
 $pakolliset = ['email','password'];
 include "virheilmoitukset.php";
 $virheilmoitukset_json = json_encode($virheilmoitukset);
+echo "<script>const virheilmoitukset = $virheilmoitukset_json</script>";
 include "header.php"; 
 include('kasittelija_login.php');
-echo "<script>const virheilmoitukset = $virheilmoitukset_json</script>";
 ?>
 <div class="container">
 

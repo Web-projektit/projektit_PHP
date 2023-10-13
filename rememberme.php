@@ -109,7 +109,6 @@ return $loggedIn;
 };  */
 
 function secure_page($role = ''){
-if (!session_id()) session_start();
 $loggedIn = loggedIn();
 if (!$loggedIn || $role && $role != $loggedIn){
     $_SESSION['next_page'] = $_SERVER['PHP_SELF']; 

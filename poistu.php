@@ -1,11 +1,9 @@
 <?php
-include "debuggeri.php";
 include "asetukset.php";
 include "db.php";
 include "rememberme.php";
 /* Sessionin purkaminen */
 if (!session_id()) session_start();
-header("location: login.php");
 if ($user_id = loggedIn() === false) {
     header("location: login.php");
     exit;
@@ -14,6 +12,7 @@ if ($user_id = loggedIn() === false) {
     header("location: login.php");
     exit;
     }*/
+include "debuggeri.php";
 debuggeri(__FUNCTION__.",session ja cookie");    
 debuggeri($_SESSION);    
 debuggeri($_COOKIE);    

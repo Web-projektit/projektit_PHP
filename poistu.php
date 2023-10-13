@@ -3,6 +3,7 @@ include "debuggeri.php";
 include "asetukset.php";
 include "db.php";
 include "rememberme.php";
+header("location: login.php");
 /* Sessionin purkaminen */
 if (!session_id()) session_start();
 if ($user_id = loggedIn() === false) {

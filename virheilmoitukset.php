@@ -79,4 +79,5 @@ $virheilmoitukset['accountExistsMsg'] = "Sähköposti on lähetetty antamaasi s�
 $virheilmoitukset['verificationRequiredErr'] = "Vahvista sähköpostiosoite ensin";
 $virheilmoitukset['emailPwdErr'] = "Väärä käyttäjätunnus tai salasana";
 $virheilmoitukset['emailErr'] = "Sähköpostin lähetys epäonnistui, yritä myöhemmin uudelleen";
+$virheilmoitukset_json = json_encode($virheilmoitukset);
 ?>

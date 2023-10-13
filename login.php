@@ -7,7 +7,6 @@ if ($loggedIn = loggedIn()) {
     header("location: profiili.php");
     exit;
     }
-include('kasittelija_login.php');
 $title = 'Kirjautuminen';
 $css = 'login.css';
 /* Lomakkeen kentät, nimet samat kuin users-taulussa. */
@@ -15,7 +14,7 @@ $kentat = ['email','password','rememberme'];
 $kentat_suomi = ['sähköpostiosoite','salasana','muista minut'];
 $pakolliset = ['email','password'];
 include "virheilmoitukset.php";
-$virheilmoitukset_json = json_encode($virheilmoitukset);
+include 'kasittelija_login.php';
 echo "<script>const virheilmoitukset = $virheilmoitukset_json</script>";
 include "header.php"; 
 ?>

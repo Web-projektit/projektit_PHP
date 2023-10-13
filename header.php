@@ -67,7 +67,7 @@ switch ($loggedIn) {
     echo '<a href="poistu.php">Poistu</a>';
     break;
   default:
-    echo "<a class='".active('login',$active)."' href='login.php'>Kirjautuminen</a>";
+    echo "<a class='nav-suojaus ".active('login',$active)."' href='login.php'>Kirjautuminen</a>";
     break;
 } 
 

@@ -21,8 +21,8 @@ if (isset($_POST['painike'])){
             } 
          }
       }
-
-   debuggeri($errors);
+   $rememberme = isset($rememberme) ? true : false;
+   if ($errors) debuggeri($errors);
    if (!$errors){
       $query = "SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = '$email'";
       debuggeri($query);

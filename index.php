@@ -1,7 +1,7 @@
 <?php
 //header('Location: ./login.php');
-$title = 'Kuvagalleria';
-$css = 'kuvagalleria.css';
+$title = 'Etusivu';
+//$css = 'kuvagalleria.css';
 include "header.php"; 
 ?>
 <div class="container"> 

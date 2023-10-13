@@ -1,8 +1,6 @@
 <?php
 if (!defined('DEBUG')) define('DEBUG',true);
-/* 
- * To change this license header, choose License Headers in Project Properties.
- */
+
 function debug_error_handler($errno,$errstr,$errfile,$errline){
     if (!(error_reporting() & $errno)) {
         // This error code is not included in error_reporting, so let it fall
@@ -83,4 +81,3 @@ function debuggeri_shutdown($parametrit = ""){
 
 if (defined('DEBUG') and !DEBUG) $old_error_reporting = error_reporting(0);  
 ?>
-

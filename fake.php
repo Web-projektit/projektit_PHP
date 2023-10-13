@@ -80,5 +80,3 @@ echo "Total number of records in database: $rows<br>";
 ?>
 </div>
 <?php include "footer.html"; ?>
-
-

@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 $PALVELIN = $_SERVER['HTTP_HOST'];
 $PALVELU = "projektit_PHP/php_sovellusmalli";
 $LINKKI_RESETPASSWORD = "resetpassword.php";
@@ -25,13 +26,14 @@ if ($LOCAL) {
     $EMAIL_ADMIN = $admin_mail;
     }
 elseif (strpos($_SERVER['HTTP_HOST'],"azurewebsites") !== false){
-    $db_server = $_ENV['MYSQL_HOSTNAME'];
-    $db_username = $_ENV['MYSQL_USERNAME'];
-    $db_password = $_ENV['MYSQL_PASSWORD'];
+    $db_server = $_ENV['MYSQL_HOSTNAME'] ?? getenv('MYSQL_HOSTNAME');
+    ;
+    $db_username = $_ENV['MYSQL_USERNAME'] ?? getenv('MYSQL_USERNAME');
+    $db_password = $_ENV['MYSQL_PASSWORD'] ?? getenv('MYSQL_PASSWORD');
     /* Mailtrap */
-    $EMAIL_ADMIN = $_ENV['EMAIL_ADMIN']; 
-    $username_mailtrap = $_ENV['EMAIL_USERNAME'];
-    $password_mailtrap = $_ENV['EMAIL_PASSWORD'];
+    $EMAIL_ADMIN = $_ENV['EMAIL_ADMIN'] ?? getenv('EMAIL_ADMIN'); 
+    $username_mailtrap = $_ENV['EMAIL_USERNAME'] ?? getenv('EMAIL_USERNAME');
+    $password_mailtrap = $_ENV['EMAIL_PASSWORD'] ?? getenv('EMAIL_PASSWORD');
     }
 
 define("SAHKOPOSTIPALVELU","mailtrap");

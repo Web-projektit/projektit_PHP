@@ -19,7 +19,6 @@ ini_set('default_charset', 'utf-8');
 </head>
 <body>
 <?php 
-error_reporting(E_ALL);
 include "debuggeri.php";
 /* Huom. suojatulla sivulla on asetukset,db,rememberme.php; */
 if (!isset($loggedIn)){

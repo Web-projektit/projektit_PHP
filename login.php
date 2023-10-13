@@ -2,13 +2,14 @@
 include "asetukset.php";
 include "db.php";
 include "rememberme.php";
+include "debuggeri.php";
 if ($loggedIn = loggedIn()) {
     header("location: profiili.php");
     exit;
     }
+include('kasittelija_login.php');
 $title = 'Kirjautuminen';
 $css = 'login.css';
-
 /* Lomakkeen kentät, nimet samat kuin users-taulussa. */
 $kentat = ['email','password','rememberme'];
 $kentat_suomi = ['sähköpostiosoite','salasana','muista minut'];
@@ -17,7 +18,6 @@ include "virheilmoitukset.php";
 $virheilmoitukset_json = json_encode($virheilmoitukset);
 echo "<script>const virheilmoitukset = $virheilmoitukset_json</script>";
 include "header.php"; 
-include('kasittelija_login.php');
 ?>
 <div class="container">
 

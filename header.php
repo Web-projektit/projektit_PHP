@@ -19,7 +19,7 @@ ini_set('default_charset', 'utf-8');
 </head>
 <body>
 <?php 
-include "debuggeri.php";
+include_once "debuggeri.php";
 /* Huom. suojatulla sivulla on asetukset,db,rememberme.php; */
 if (!isset($loggedIn)){
   require "asetukset.php";

@@ -61,6 +61,7 @@ switch ($loggedIn) {
     echo "<a class='".active('kayttajat',$active). "' href='kayttajat.php'>Käyttäjät</a>";
   case true:
     echo "<a class='".active('profiili',$active). "' href='profiili.php'>Profiili</a>";
+    /* Huom. tästä oikeaan laitaan. */
     echo "<a class='nav-suojaus ".active('phpinfo',$active). "' href='phpinfo.php'>phpinfo</a>";
     echo "<a class='".active('fake',$active). "' href='fake.php'>fake</a>";
     echo '<a href="poistu.php">Poistu</a>';

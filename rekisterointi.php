@@ -94,8 +94,7 @@ if (empty($errors)) {
     $lisays = $yhteys->affected_rows;
     }
 
-if ($lisays) {
-    
+if ($lisays) {  
     $id = $yhteys->insert_id;
     $token = md5(rand().time());
     $query = "INSERT INTO signup_tokens (users_id,token) VALUES ($id,'$token')";
@@ -107,7 +106,7 @@ if ($lisays) {
 if ($lisattiin_token) {
     $msg = "Vahvista sähköpostiosoitteesi alla olevasta linkistä:<br><br>";
     $msg.= "<a href='http://$PALVELIN/$PALVELU/verification.php?token=$token'>Vahvista sähköpostiosoite</a>";
-    $msg.= "<br><br>t. t. $PALVELUOSOITE";
+    $msg.= "<br><br>t. $PALVELUOSOITE";
     $subject = "Vahvista sähköpostiosoite";
     $lahetetty = posti($email,$msg,$subject);
     }   
@@ -115,9 +114,9 @@ if ($lisattiin_token) {
 if ($lahetetty){
     $message = "Tiedot on tallennettu. Sinulle on lähetty antamaasi sähköpostiosoitteeseen
                 vahvistuspyyntö. Vahvista siinä olevasta linkistä sähköpostiosoitteesi.";
-
     }
 elseif ($lisays) {
+    /* Huom. oikeammin ohjataan vahvistuspyyntöön */
     $message = "Tallennus onnistui!";
     }
 else {
